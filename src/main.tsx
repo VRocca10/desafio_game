@@ -5,7 +5,7 @@ import App from '@/app/App'
 
 async function bootstrap() {
   try {
-    // Mock APIs are required in development and the published demo.
+
     const { worker } = await import('@/app/mocks/browser')
     await worker.start({
       serviceWorker: { url: `${import.meta.env.BASE_URL}mockServiceWorker.js` },

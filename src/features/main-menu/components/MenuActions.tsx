@@ -12,7 +12,7 @@ export function MenuActions({ onPlay, onOptions }: MenuActionsProps) {
         Options
       </Button>
       {isPreview && <p id="menu-preview-note" className="mt-2 max-w-64 text-center text-xs leading-relaxed text-muted-foreground">
-        Menu preview. Gameplay and options are coming next.
+        Options are coming next. Set sail with Play.
       </p>}
     </div>
   )

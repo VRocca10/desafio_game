@@ -1,10 +1,9 @@
-/* Asset treatments complement Tailwind layout utilities. */
 .menu-scenery {
   background: url('/assets/ui_scene_background.png') center / cover no-repeat;
 }
 
 .menu-panel {
-  /* Retina image: the atlas defines 1x borders of 40px vertically and 32px horizontally. */
+
   border: solid transparent;
   border-width: 28px 22px;
   border-image: url('/assets/png/retina/ui/menu/panel_menu.png') 80 64 fill / 28px 22px / 0 stretch;

@@ -1,0 +1,163 @@
+{
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "menu": {
+    "fps": 60.093389727201654,
+    "p95": 16.799999999999272
+  },
+  "battle": {
+    "fps": 60.102633733351965,
+    "p95": 16.700000000000728
+  },
+  "memory": [
+    {
+      "cycle": 1,
+      "usedSize": 7537944,
+      "totalSize": 9007104,
+      "embedderHeapUsedSize": 1774968,
+      "backingStorageSize": 1806890,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 2,
+      "usedSize": 7747164,
+      "totalSize": 8220672,
+      "embedderHeapUsedSize": 2021640,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 3,
+      "usedSize": 7934576,
+      "totalSize": 8482816,
+      "embedderHeapUsedSize": 1977800,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 4,
+      "usedSize": 8072808,
+      "totalSize": 8482816,
+      "embedderHeapUsedSize": 1936576,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 5,
+      "usedSize": 8119924,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 2009224,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 6,
+      "usedSize": 8176100,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1876472,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 7,
+      "usedSize": 8271580,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1955928,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 8,
+      "usedSize": 8554436,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1881512,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 9,
+      "usedSize": 8620588,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1841760,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 10,
+      "usedSize": 8646368,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1893200,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 11,
+      "usedSize": 8675456,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1949248,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 12,
+      "usedSize": 8708916,
+      "totalSize": 9793536,
+      "embedderHeapUsedSize": 1863416,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 13,
+      "usedSize": 8735588,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1933848,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 14,
+      "usedSize": 8768536,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1878264,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 15,
+      "usedSize": 8872780,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1914520,
+      "backingStorageSize": 1807190,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    }
+  ]
+}

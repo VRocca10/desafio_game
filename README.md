@@ -1,46 +1,10 @@
-# Pirate Battle
+﻿# Pirate Battle
 
-React, strict TypeScript and PixiJS naval game challenge.
+A single-player naval shooter built with React, strict TypeScript and PixiJS 8.
 
-## UI styling
+## Setup
 
-Tailwind CSS v4 runs through the Vite plugin. shadcn/ui components live in
-`src/shared/components/ui`, with shared class merging in `src/shared/lib/utils.ts`.
-The `@/` import alias points to `src`. Theme tokens are in `src/app/styles.css`.
-
-Add components as screens need them:
-
-```sh
-npx shadcn@latest add dialog tabs input label
-```
-
-Use Tailwind and shadcn/ui for the React interface. PixiJS renders the game arena.
-
-## Feature organization
-
-- `src/app`: application composition, providers, global styles and MSW setup.
-- `src/features/main-menu`: menu layout, navigation, actions and control guide.
-- `src/features/ranking`: leaderboard panel (currently a placeholder).
-- `src/features/match-history`: history panel (currently a placeholder).
-- `src/features/game`: documented boundaries for the future game implementation.
-- `src/shared`: reusable UI primitives, HTTP client and utilities.
-
-Import features through their `index.ts`. The application composes features;
-features do not import each other's internals. Keep feature-specific components,
-hooks, API calls, contracts and mock handlers beside their feature as they are added.
-Create Options and Results features when implementing those flows.
-
-## Status
-
-The main menu uses the supplied scenery, title and panel artwork, with accessible
-Harbor, Ranking and Match History tabs and an expandable control guide.
-Play and Options are disabled until their flows are implemented. Ranking and history
-show explicit placeholders. PixiJS is installed; gameplay, data flows, network
-scenarios, visual baselines and profiling remain pending.
-
-## Requirements and setup
-
-Use Node.js 24 LTS (validated with 24.18.0) and npm.
+Use Node.js 24 LTS and npm. No private backend, database or API keys are required.
 
 ```sh
 npm ci
@@ -48,47 +12,117 @@ npx playwright install chromium
 npm run dev
 ```
 
-No environment variables, backend, database or private services are required.
-MSW starts in development and production. Axios and TanStack Query are configured
-for upcoming ranking/history requests. The initial /api/status handler remains
-available, but the main menu does not make infrastructure-check requests.
+On Windows PowerShell with restricted script execution, use `npm.cmd` / `npx.cmd`.
+MSW runs in development and published builds. Serve over HTTPS or localhost;
+`public/mockServiceWorker.js` must be accessible at the origin root.
 
-## Commands
+## Play
+
+- W / up: move forward. A/D or left/right: turn.
+- Space: frontal cannon. Q/E: three parallel port/starboard cannonballs.
+- Escape or Pause: pause. Resume requires an explicit action.
+- Hold independent touch buttons to steer and fire simultaneously.
+- Losing focus or hiding the page pauses combat and clears held controls.
+- Sound on/off is shared by menu and battle and persists across refresh.
+- Desktop and mobile portrait/landscape are supported; the logical arena is 960 x 600.
+
+Chasers pursue and explode on contact; Shooters approach and fire at range.
+Player kills award one point. Contact self-destruction awards none. The round ends
+at zero hull or the time limit. Leaving or refreshing active combat abandons it.
+Completed results remain accessible through Last result after refresh.
+
+## Options and balance
+
+Options saves Game session time (whole seconds, 60–180) and Enemy spawn time
+(1–10 seconds). Default settings are 90 seconds and a 4-second spawn interval.
+Invalid saved settings fall back safely. Each new round receives a frozen snapshot.
+Other balance values, spawn points, sequence and safe distance are centralized in
+`src/shared/game/config.ts`. Ship hitboxes and islands use circles. Damage visuals
+use sprite tint; explosions use supplied sprites. Local enemy steering avoids islands.
+
+## Ranking, history and registration
+
+Ranking compares complete configuration snapshots, sorts score descending, then
+completion timestamp and match ID ascending. History lists the current player's
+matches newest first. Both lists have five records per page. Rival fixtures provide
+initial ranking entries for the default configuration. The player has a stable local
+UUID and the display name Captain. All records include the configuration used.
+
+Axios performs requests, TanStack Query owns query/mutation state, and MSW implements
+the REST endpoints. Completed matches enter a durable pending queue before submission.
+Retry registration resends the same IDs; confirmed writes are idempotent. You can
+start another match while records are pending. Failed requests never block combat.
+
+Browser storage is the persistence boundary. Clearing site data resets local identity,
+options and records. Without writable storage, a status message explains that results
+are limited to the current visit; durable offline recovery requires working storage.
+
+## Network demo and reproducing failures
+
+Expand Network demo in the menu and select a scenario. It affects match APIs only.
+Reset demo data clears confirmed/pending matches and the last result, restores the
+success scenario and refreshes query caches. Options, audio preference and player
+identity are retained. Pages uses labeled demo history plus rival fixtures.
+
+| Scenario | Behavior |
+| --- | --- |
+| success | 100 ms response delay and normal records |
+| empty | No fixture records; genuine confirmed records remain |
+| pages | Multiple pages of deterministic demo records |
+| slow | 1800 ms latency |
+| variable | Repeating 200/1400/450 ms latency sequence |
+| out-of-order | Alternating 1800/100 ms snapshots; cancelled reads cannot overwrite current data |
+| timeout | 6000 ms response versus the Axios 5000 ms timeout |
+| connection | Network error |
+| http-400 / http-500 | Reproducible HTTP errors |
+| ranking-error / history-error | Failure restricted to the selected read endpoint |
+| post-commit-timeout | Write persists, then response is delayed past the client timeout |
+| outage | Read/write unavailability until another scenario is selected |
+
+To reproduce durable recovery: select post-commit-timeout, finish a match, wait for
+the failure message, refresh, switch to success and retry registration. History
+must contain exactly one copy of that match. For an unavailable service, follow the
+same steps using outage. The current automated tests cover both core data/UI paths.
+
+## Commands and tests
 
 | Command | Purpose |
 | --- | --- |
-| npm run dev | Start development server |
-| npm run build | Check types and build into dist |
-| npm run preview | Serve the production build locally |
-| npm run lint | Run Oxlint |
-| npm run typecheck | Check application, tooling and test types |
-| npm run test:e2e | Build and run Chromium desktop/mobile tests |
-| npm run test:e2e:ui | Build and open Playwright test UI |
-| npm run test:report | Open the HTML test report |
-| npm run mocks:init | Regenerate the MSW browser worker |
+| npm run dev | Local development with Strict Mode |
+| npm run build | Type check and production build in dist |
+| npm run preview | Serve production output |
+| npm run lint | Oxlint |
+| npm run typecheck | Check app, tools and tests |
+| npm run build:test | Optimized test build in dist-test |
+| npm run test:e2e | Build test bundle and run desktop/mobile Chromium tests |
+| npm run test:e2e:ui | Interactive Playwright runner |
+| npm run test:report | Open latest HTML report |
+| npm run profile | Build and run the three-minute profiling scenario |
+| npm run mocks:init | Regenerate the browser worker |
 
-Playwright runs against the production preview on port 4173. Reports are generated
-in playwright-report; failure traces and screenshots go into test-results.
-Each test uses an isolated browser context.
-The initial smoke test still targets the former setup screen; update its assertions
-when test work resumes. Tests were not run for the new menu.
+Production builds do not include the `window.__battle` test driver. Test builds
+expose deterministic starting fixtures, a read-only snapshot and fixed-step clock
+control. Inputs, combat rules, rendering and network flows remain real. Browser tests
+include actual keyboard and CDP multi-touch input; simulation unit tests are separate
+cases even though Playwright runs them. Tests start their own preview on port 4173.
+The profiling script uses port 4175. Keep these ports free.
 
-## Assets and documentation
+Visual baselines live beside visual.spec.ts and currently target Windows Chromium.
+Review differences before updating with `npx playwright test visual --update-snapshots`.
+Other operating systems need separately reviewed platform baselines. HTML reports are
+in playwright-report; failure screenshots/traces in test-results. These generated
+folders are ignored; publish them as delivery artifacts, not application assets.
 
-- public/assets: supplied sprites, UI atlases (standard/retina), tiles and WAV sounds.
-- docs/ASSETS.md: asset provenance.
-- docs/CHALLENGE.original.md: original specification.
-- ARCHITECTURE.md: current structure and planned boundaries.
+## Architecture and assets
+
+See ARCHITECTURE.md for boundaries and persistence. docs/CHALLENGE.original.md is the
+original specification; docs/DELIVERY-AUDIT.md records the initial audit and subsequent
+progress. docs/ASSETS.md records supplied asset provenance. src/features/game/README.md
+lists implementation modules. Profiling evidence is under docs/evidence.
 
 ## Deployment
 
-Build command: npm run build. Output directory: dist.
-Use static HTTPS hosting (localhost is also supported by service workers).
-Serve public/mockServiceWorker.js at the application root.
-No deployment has been created yet.
-
-## Pending gameplay features
-
-Controls, options, persistence, ranking/history contracts, failure scenario
-selection/reset, retry recovery and performance measurements will be documented
-as they are implemented.
+Production command: `npm run build`; static output: `dist`. The project includes
+Vercel/Netlify settings. Do not publish dist-test. No environment variables are needed.
+Verify loading/refresh, service worker startup, Options persistence and match recovery
+on the public URL. The public URL will be recorded here after deployment is completed.

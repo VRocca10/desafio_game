@@ -13,7 +13,7 @@ export function ControlsGuide() {
         Captain’s guide
       </summary>
       <div className="px-4 pb-4">
-        <p className="mb-3 text-xs text-muted-foreground">Planned controls for your first voyage.</p>
+        <p className="mb-3 text-xs text-muted-foreground">Controls for your voyage.</p>
         <dl className="space-y-2 text-xs sm:text-sm">
           {controls.map(([keys, action]) => (
             <div key={action} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
@@ -23,7 +23,7 @@ export function ControlsGuide() {
           ))}
         </dl>
         <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-          On mobile, on-screen controls will let you steer and fire at the same time.
+          On mobile, hold the on-screen controls to steer and fire at the same time.
         </p>
       </div>
     </details>

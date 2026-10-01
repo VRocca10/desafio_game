@@ -1,0 +1,32 @@
+import { expect, test } from '@playwright/test'
+
+test('validates and persists options, then starts with the saved duration', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Options', exact: true }).click()
+  await page.getByLabel('Game session time').fill('59')
+  await page.getByLabel('Enemy spawn time').fill('0')
+  await page.getByRole('button', { name: 'Save settings' }).click()
+  await expect(page.getByRole('status')).toContainText('Enter a whole session time')
+  await page.getByLabel('Game session time').fill('180')
+  await page.getByLabel('Enemy spawn time').fill('2.5')
+  await page.getByRole('button', { name: 'Save settings' }).click()
+  await expect(page.getByRole('status')).toHaveText('Settings saved.')
+  await page.reload()
+  await page.getByRole('button', { name: 'Options', exact: true }).click()
+  await expect(page.getByLabel('Game session time')).toHaveValue('180')
+  await expect(page.getByLabel('Enemy spawn time')).toHaveValue('2.5')
+  await page.getByRole('button', { name: 'Main Menu', exact: true }).click()
+  await page.getByRole('button', { name: 'Play', exact: true }).click()
+  await expect(page.locator('canvas')).toBeVisible()
+  await page.getByRole('button', { name: 'Pause', exact: true }).click()
+  expect(Number((await page.locator('dl dd').nth(2).innerText()).replace('s', ''))).toBeGreaterThan(170)
+})
+
+test('battle controls fit after changing to landscape', async ({ page }) => {
+  await page.setViewportSize({ width: 393, height: 851 })
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Play', exact: true }).click()
+  await expect(page.locator('canvas')).toBeVisible()
+  await page.setViewportSize({ width: 851, height: 393 })
+  await expect.poll(() => page.evaluate<boolean>('document.querySelector(".game-controls").getBoundingClientRect().bottom <= innerHeight')).toBe(true)
+})

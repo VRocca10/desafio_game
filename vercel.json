@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "headers": [
+    { "source": "/mockServiceWorker.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+  ]
+}

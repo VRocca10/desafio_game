@@ -129,7 +129,6 @@
     }
 }
 
-/* Initial nautical palette shared by React UI primitives. */
 :root {
   color-scheme: dark;
   --background: #102d3a;
