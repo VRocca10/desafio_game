@@ -13,7 +13,7 @@ export default async function serve() {
         const stopped = new Promise<void>((resolve) => server.once('exit', () => resolve()))
         server.kill(); await stopped
       }
-    } catch { /* Wait for Vite to listen. */ }
+    } catch {}
     await setTimeout(100)
   }
   server.kill()
