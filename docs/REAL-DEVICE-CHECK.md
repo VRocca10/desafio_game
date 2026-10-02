@@ -6,8 +6,9 @@ Android/browser versions and the remaining checks have not been recorded. This
 confirmation does not establish acceptance of all mobile requirements.
 
 The public HTTPS deployment can be opened directly on the phone. Local USB setup
-below remains available for development. The newest requirements/UI changes have
-not been tested or published by the coding agent.
+below remains available for development. The newest requirements/UI changes passed
+the automated desktop/mobile suite and local production smoke. The public deployment
+still has older bundles and must be updated before final physical-device acceptance.
 
 ## Connect using USB and Chrome
 

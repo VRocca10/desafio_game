@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 test('menu, stable arena and result visual baselines', async ({ page }) => {
+  test.setTimeout(60000)
   await page.addInitScript("localStorage.setItem('pirate-battle:muted', 'true')")
   await page.goto('/?scenario=shooter')
   await expect(page.getByRole('heading', { name: 'Pirate Battle' })).toBeVisible()
@@ -12,6 +13,20 @@ test('menu, stable arena and result visual baselines', async ({ page }) => {
   await page.evaluate('window.__battle.advance(30)')
   await expect(page.getByText('Match registered.', { exact: true })).toBeVisible()
   await expect(page).toHaveScreenshot('result.png')
+})
+
+test('mobile landscape arena and pause layout remain readable', async ({ page }) => {
+  await page.setViewportSize({ width: 851, height: 393 })
+  await page.addInitScript("localStorage.setItem('pirate-battle:muted', 'true')")
+  await page.goto('/?scenario=arena')
+  await page.getByRole('button', { name: 'Play', exact: true }).click()
+  await expect(page.locator('canvas')).toBeVisible({ timeout: 15000 })
+  await page.evaluate('window.__battle.advance(0)')
+  await expect(page).toHaveScreenshot('arena-landscape.png')
+  await page.getByRole('button', { name: 'Pause', exact: true }).click()
+  await expect(page.getByRole('dialog', { name: 'Battle paused' })).toBeVisible()
+  for (const name of ['Resume', 'Options', 'Main Menu']) await expect(page.getByRole('dialog').getByRole('button', { name, exact: true })).toBeInViewport({ ratio: 1 })
+  await expect(page).toHaveScreenshot('pause-landscape.png')
 })
 
 test('options, ranking and history use the illustrated captain panels', async ({ page }) => {

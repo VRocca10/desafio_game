@@ -88,3 +88,18 @@ not all devices, mobile browsers or the maximum-density one-second-spawn fixture
 The full environment, minute windows, CPU timings and entity samples are in
 profile-gpu.json. The earlier exploratory GPU run overlapped a build; it was
 replaced by this isolated final run.
+
+## Final delivery layout measurement
+
+After the final mobile/control/dialog changes, the isolated hardware run completed
+all 180 active seconds at 59.99 average FPS and a 16.7 ms p95 frame interval.
+The renderer, CPU, browser, resolution and four-second-spawn extra-health fixture
+match the hardware setup above. The final report is profile-gpu-final.json;
+profile-gpu.json preserves the preceding illustrated renderer measurement.
+No builds or browser tests ran concurrently with this final profiling process.
+The one-second entity samples observed up to 24 ships (including the player) and
+7 projectiles; these are sampled maxima, not a count of every transient peak.
+Five post-round start/play/exit checkpoints used 7,774,364 / 7,944,772 / 8,096,704 /
+8,238,812 / 8,316,776 bytes after forced GC. This remaining growth is recorded rather
+than characterized as a flat heap; the separate snapshots investigate retained
+objects and resource counters.

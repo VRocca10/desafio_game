@@ -1,4 +1,4 @@
-﻿import { expect, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('starts, pauses, resumes and cleans up repeated visits', async ({ page }) => {
   const errors: string[] = []
@@ -9,13 +9,13 @@ test('starts, pauses, resumes and cleans up repeated visits', async ({ page }) =
     await expect(page.getByRole('img', { name: 'Naval battle arena' })).toBeVisible()
     await expect(page.getByRole('button', { name: 'Pause', exact: true })).toBeEnabled()
     await page.getByRole('button', { name: 'Pause', exact: true }).click()
-    await expect(page.getByRole('heading', { name: 'Battle paused' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Paused', exact: true })).toBeVisible()
     const paused = await page.locator('dl dd').allTextContents()
     await page.waitForTimeout(1100)
     expect(await page.locator('dl dd').allTextContents()).toEqual(paused)
     await page.getByRole('button', { name: 'Resume', exact: true }).click()
     await page.evaluate("window.dispatchEvent(new Event('blur'))")
-    await expect(page.getByRole('heading', { name: 'Battle paused' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Paused', exact: true })).toBeVisible()
     await page.getByRole('button', { name: 'Resume', exact: true }).click()
     await page.getByRole('button', { name: 'Main Menu', exact: true }).click()
     await expect(page.locator('canvas')).toHaveCount(0)

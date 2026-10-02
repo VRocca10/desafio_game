@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-10-02T16:26:19.567Z",
+  "url": "http://127.0.0.1:4177",
+  "checks": [
+    "Direct load and Controls dialog",
+    "Published/production MSW query and scenario reset",
+    "Portrait proportions, landscape controls, pause Options and no test instrumentation",
+    "Real round registration, refresh, last result, history/ranking consistency, next-round settings"
+  ],
+  "pageErrors": [],
+  "status": "passed",
+  "browser": "153.0.8010.12",
+  "productionAssets": [
+    "/assets/index-CaoXdkgX.js"
+  ],
+  "matchesLocalProductionAssets": true,
+  "menuButtons": [
+    "Play",
+    "Options",
+    "Controls",
+    "Network scenarios"
+  ]
+}

@@ -9,13 +9,13 @@ export function NetworkScenarios({ onReset, embedded = false }: { onReset: () =>
   const [scenario, setScenario] = useState(readScenario)
   const client = useQueryClient()
   const content = <div className="network-scenarios-content text-left text-sm">
-    <label className="my-3 grid gap-2">Network scenario
-      <select value={scenario} className="rounded bg-slate-950 p-2" onChange={(event) => {
+    <div className="my-3 grid gap-2"><label htmlFor="network-scenario">Network scenario</label>
+      <select id="network-scenario" value={scenario} className="rounded bg-slate-950 p-2" onChange={(event) => {
         const value = event.target.value as Scenario
         saveScenario(value); setScenario(value); void import('./mocks/handlers').then(({ resetRequestSequence }) => resetRequestSequence())
         void client.invalidateQueries({ queryKey: ['matches'] })
       }}>{scenarios.map((value) => <option key={value}>{value}</option>)}</select>
-    </label>
+    </div>
     <p className="mb-3">Demo scenarios affect ranking and history only. Reset clears this browser's match records and pending submissions.</p>
     <Button className="menu-secondary" variant="outline" onClick={() => {
       resetRecords(); clearJournalResults(); saveScenario('success'); setScenario('success'); void import('./mocks/handlers').then(({ resetRequestSequence }) => resetRequestSequence()); onReset()

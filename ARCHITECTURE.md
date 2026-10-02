@@ -8,8 +8,9 @@ scenario persistence, fixture reset and TanStack Query cache invalidation. Last
 result exposes the persisted completed result and pending registration recovery.
 Pixi renders overhead health indicators for both the player (green) and enemies
 (red); the semantic React HUD continues to expose the player's health. These
-latest UI changes await validation; historical test/profile reports do not cover
-them.
+latest UI changes are covered by the browser/visual acceptance suite and local
+production smoke checks; historical reports are distinguished from the final
+evidence in docs/DELIVERY-STATUS.md.
 
 `app` composes features and initializes the MSW mock backend. Features own menu,
 options, battle, ranking and history behavior. `shared` owns UI primitives, typed

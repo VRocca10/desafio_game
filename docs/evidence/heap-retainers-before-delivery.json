@@ -38,12 +38,12 @@
         "type": "property"
       },
       {
-        "node": "system / Context / scope @124139",
+        "node": "system / Context / scope @199561",
         "edge": "context",
         "type": "internal"
       },
       {
-        "node": "system / Context / scope @116693",
+        "node": "system / Context / scope @93085",
         "edge": "previous",
         "type": "internal"
       },
@@ -61,41 +61,6 @@
         "node": "MessageEvent",
         "edge": "prototype",
         "type": "property"
-      }
-    ]
-  },
-  {
-    "name": "MessageEvent",
-    "path": [
-      {
-        "node": "(GC roots)",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "C++ Persistent roots",
-        "edge": 29,
-        "type": "element"
-      },
-      {
-        "node": "blink::ScriptStateImpl",
-        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
-        "type": "internal"
-      },
-      {
-        "node": "blink::V8PerContextData",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeInfo *, blink::KeyValuePair<const blink::WrapperTypeInfo *, v8::TracedReference<v8::Object>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HashTraits<v8::TracedReference<v8::Object>>>, blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HeapAllocator>>",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "MessageEvent",
-        "edge": 32,
-        "type": "element"
       }
     ]
   },
@@ -138,12 +103,12 @@
         "type": "property"
       },
       {
-        "node": "system / Context / scope @124139",
+        "node": "system / Context / scope @199561",
         "edge": "context",
         "type": "internal"
       },
       {
-        "node": "system / Context / scope @116693",
+        "node": "system / Context / scope @93085",
         "edge": "previous",
         "type": "internal"
       },
@@ -160,7 +125,7 @@
     ]
   },
   {
-    "name": "MessagePort",
+    "name": "MessageEvent",
     "path": [
       {
         "node": "(GC roots)",
@@ -168,64 +133,29 @@
         "type": "element"
       },
       {
-        "node": "(Global handles)",
-        "edge": 10,
+        "node": "C++ Persistent roots",
+        "edge": 29,
         "type": "element"
       },
       {
-        "node": "UtilityScript",
-        "edge": "1 / DevTools console",
+        "node": "blink::ScriptStateImpl",
+        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
         "type": "internal"
       },
       {
-        "node": "Window / http://127.0.0.1:4175",
-        "edge": "global",
-        "type": "property"
-      },
-      {
-        "node": "HTMLDocument",
-        "edge": 5,
+        "node": "blink::V8PerContextData",
+        "edge": 1,
         "type": "element"
       },
       {
-        "node": "<main id=\"main-content\" class=\"captain-scene-content\">",
-        "edge": 12,
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeInfo *, blink::KeyValuePair<const blink::WrapperTypeInfo *, v8::TracedReference<v8::Object>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HashTraits<v8::TracedReference<v8::Object>>>, blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HeapAllocator>>",
+        "edge": 1,
         "type": "element"
       },
       {
-        "node": "Fi",
-        "edge": "__reactFiber$efob4upaeu",
-        "type": "property"
-      },
-      {
-        "node": "Object",
-        "edge": "__proto__",
-        "type": "property"
-      },
-      {
-        "node": "Fi",
-        "edge": "constructor",
-        "type": "property"
-      },
-      {
-        "node": "system / Context / scope @112219",
-        "edge": "context",
-        "type": "internal"
-      },
-      {
-        "node": "",
-        "edge": "We",
-        "type": "context"
-      },
-      {
-        "node": "system / Context / scope @178933",
-        "edge": "context",
-        "type": "internal"
-      },
-      {
-        "node": "MessagePort",
-        "edge": "ne",
-        "type": "context"
+        "node": "MessageEvent",
+        "edge": 15,
+        "type": "element"
       }
     ]
   },
@@ -289,8 +219,163 @@
       },
       {
         "node": "MessagePort",
-        "edge": 50,
+        "edge": 25,
         "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "HTMLDocument",
+        "edge": 5,
+        "type": "element"
+      },
+      {
+        "node": "<main id=\"main-content\" class=\"captain-scene-content\">",
+        "edge": 12,
+        "type": "element"
+      },
+      {
+        "node": "Fi",
+        "edge": "__reactFiber$m5gd9pll38f",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": "__proto__",
+        "type": "property"
+      },
+      {
+        "node": "Fi",
+        "edge": "constructor",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @89013",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "We",
+        "type": "context"
+      },
+      {
+        "node": "system / Context / scope @89401",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "MessagePort",
+        "edge": "re",
+        "type": "context"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "initial_generator_prototype",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Window [JSGlobalObject] / http://127.0.0.1:4175",
+        "edge": "global_object",
+        "type": "internal"
+      },
+      {
+        "node": "system / JSProxy",
+        "edge": "WebSocket",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": 2,
+        "type": "hidden"
+      },
+      {
+        "node": "construct",
+        "edge": "construct",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @199561",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "system / Context / scope @93085",
+        "edge": "previous",
+        "type": "internal"
+      },
+      {
+        "node": "system / SourceTextModule",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": 5,
+        "type": "hidden"
       }
     ]
   },
@@ -340,126 +425,6 @@
       {
         "node": "blink::BoxedV8Module",
         "edge": 13,
-        "type": "element"
-      },
-      {
-        "node": "system / SourceTextModule",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "Generator",
-        "edge": 5,
-        "type": "hidden"
-      }
-    ]
-  },
-  {
-    "name": "Generator",
-    "path": [
-      {
-        "node": "(GC roots)",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "C++ Persistent roots",
-        "edge": 29,
-        "type": "element"
-      },
-      {
-        "node": "blink::ScriptStateImpl",
-        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
-        "type": "internal"
-      },
-      {
-        "node": "blink::V8PerContextData",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
-        "edge": 3,
-        "type": "element"
-      },
-      {
-        "node": "Modulator",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "blink::ModuleRecordResolverImpl",
-        "edge": 4,
-        "type": "element"
-      },
-      {
-        "node": "blink::HeapHashTableBacking<blink::HashTable<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, blink::KeyValuePair<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HashTraits<cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HeapAllocator>>",
-        "edge": 2,
-        "type": "element"
-      },
-      {
-        "node": "blink::BoxedV8Module",
-        "edge": 25,
-        "type": "element"
-      },
-      {
-        "node": "system / SourceTextModule",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "Generator",
-        "edge": 5,
-        "type": "hidden"
-      }
-    ]
-  },
-  {
-    "name": "Generator",
-    "path": [
-      {
-        "node": "(GC roots)",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "C++ Persistent roots",
-        "edge": 29,
-        "type": "element"
-      },
-      {
-        "node": "blink::ScriptStateImpl",
-        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
-        "type": "internal"
-      },
-      {
-        "node": "blink::V8PerContextData",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
-        "edge": 3,
-        "type": "element"
-      },
-      {
-        "node": "Modulator",
-        "edge": 1,
-        "type": "element"
-      },
-      {
-        "node": "blink::ModuleRecordResolverImpl",
-        "edge": 4,
-        "type": "element"
-      },
-      {
-        "node": "blink::HeapHashTableBacking<blink::HashTable<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, blink::KeyValuePair<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HashTraits<cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HeapAllocator>>",
-        "edge": 2,
-        "type": "element"
-      },
-      {
-        "node": "blink::BoxedV8Module",
-        "edge": 11,
         "type": "element"
       },
       {
@@ -569,7 +534,7 @@
       },
       {
         "node": "RemotePlayback",
-        "edge": 188,
+        "edge": 176,
         "type": "element"
       },
       {
@@ -614,7 +579,7 @@
       },
       {
         "node": "RemotePlayback",
-        "edge": 188,
+        "edge": 176,
         "type": "element"
       },
       {
@@ -674,7 +639,7 @@
       },
       {
         "node": "PerformanceResourceTiming",
-        "edge": 91,
+        "edge": 125,
         "type": "element"
       }
     ]
@@ -714,7 +679,7 @@
       },
       {
         "node": "PerformanceResourceTiming",
-        "edge": 92,
+        "edge": 102,
         "type": "element"
       }
     ]
@@ -754,7 +719,7 @@
       },
       {
         "node": "PerformanceResourceTiming",
-        "edge": 93,
+        "edge": 89,
         "type": "element"
       }
     ]

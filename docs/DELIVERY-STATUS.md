@@ -3,6 +3,51 @@
 Updated: 2026-10-02. The original findings in DELIVERY-AUDIT.md are a historical
 snapshot; this file tracks the implementation that followed that audit.
 
+## Final acceptance review
+
+The final local acceptance suite passed **78 executions (39 tests in two Chromium
+projects)**: 20 direct simulation executions and 58 browser executions. Sixteen
+PNG baselines were reviewed and updated for menu, arena, result, Options, ranking,
+history and landscape arena/pause. The accepted HTML report is
+evidence/playwright-report.html; initial failure traces are preserved under
+evidence/failure-traces with explanations of their fixes.
+
+Production build, optimized test build, explicit typecheck, lint and diff checks
+passed. Five development Strict Mode start/exit cycles passed without page errors
+or duplicate/leaked canvases. Production smoke passed with a real uninstrumented
+round, active MSW, direct load/refresh, both orientations, paused settings and
+consistent persisted ranking/history. See evidence/production-smoke.json.
+
+The review fixed landscape touch buttons displaced by inherited grid rules and a
+clipped Main Menu action in the short-screen pause dialog. Tests now cover both
+rotation directions with real CDP touch, simultaneous movement/fire, support-dialog
+focus/reset, HTTP/connection/timeout recovery and next-round configuration after
+editing paused Options. Refer to FINAL-REVIEW.md for the requirements mapping.
+
+Latest 1/5/15 heap checkpoints find zero retained-world fingerprints and four
+MessageEvents throughout. DOM nodes remain 228 and listeners 216. Heap usage is
+6,687,212 / 7,604,036 / 8,376,308 bytes. Remaining native/browser resource growth is
+documented, not claimed eliminated. See evidence/heap-summary.json,
+evidence/heap-retainers.json and evidence/FOLLOW-UP.md.
+
+Final isolated three-minute GPU measurement: **59.99 FPS average**, **16.7 ms p95
+frame interval**, round completed. The renderer was ANGLE AMD Radeon Graphics via
+Direct3D11, Chromium 153.0.8010.12, 1280x720 at density 1 on Ryzen 3 7320U. The
+optimized fixture uses 180 active seconds, four-second spawns, muted audio and an
+extra-health stationary player. Per-minute windows, CPU timings, entity counts and
+five lifecycle measurements are in evidence/profile-gpu-final.json. This covers
+the documented desktop setup, not phone FPS or every balance configuration.
+
+Public URL: https://desafio-game.vercel.app/. The public check found older bundles
+and no Controls button, so publication acceptance remains pending. Commit/push
+the final revision, wait for deployment and rerun the published check. Xiaomi
+acceptance is partial: rotation was confirmed and the user reported some layout
+improvement; remaining checks/device details are in REAL-DEVICE-CHECK.md.
+
+The sections below preserve earlier implementation/check history. Their counts,
+pending tasks and profile measurements describe earlier revisions, not the final
+acceptance run above.
+
 ## Implemented and checked
 
 - Immediate termination on lethal Chaser/projectile damage; no later same-step score.
@@ -21,7 +66,7 @@ snapshot; this file tracks the implementation that followed that audit.
 
 ## Evidence
 
-The full acceptance suite currently has 68 passing executions: 34 tests in two projects.
+Before this final review, the acceptance suite had 68 passing executions: 34 tests in two projects.
 Twenty executions are direct simulation tests; 48 are browser tests. The browser
 coverage includes controls, collision, damage, termination/replay, visibility handler,
 asset failure/cancel/retry, audio, options, persistence, paging, outage, post-commit
@@ -32,7 +77,7 @@ The HTML report is in evidence/playwright-report.html. Visual baseline PNGs are 
 tests/e2e/visual.spec.ts-snapshots. Performance and Strict Mode evidence are recorded
 separately when their scripts finish. Production has no test-driver global.
 
-## Remaining publication steps
+## Earlier publication checklist
 
 - Review development Strict Mode measurements.
 - Include all source/evidence/baselines in the final Git revision.
@@ -91,7 +136,7 @@ four-second-spawn stationary stress fixture at 1280×720, not every device or se
 
 ## Scope and limitations
 
-Latest changes, not yet validated: updated pause/result/ranking layouts, removal
+Changes awaiting validation before the final review: updated pause/result/ranking layouts, removal
 of the floating utility panel, sound in Options, touch input release/sliding and
 portrait insets, Controls/Network scenarios modal dialogs with scenario reset,
 Last result access after refresh, and the player's overhead health bar restored.
@@ -104,4 +149,5 @@ All persistent mock data is browser-local, as required by this backend-free demo
 It is not a shared internet leaderboard. A user who clears browser storage loses the
 local identity and records. Rivals are explicit fixtures. Native dialog focus is used;
 no external accessibility certification is claimed. Visual baselines are platform-specific.
-Circle hitboxes, tint-based damage and local enemy steering are intentional simplifications.
+Circle hitboxes and local enemy steering are intentional simplifications. Damage
+uses the supplied sail/wreck sprite stages.

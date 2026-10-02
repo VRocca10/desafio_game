@@ -38,7 +38,9 @@ Options saves Game session time (whole seconds, 60–180) and Enemy spawn time
 Invalid saved settings fall back safely. Each new round receives a frozen snapshot.
 Other balance values, spawn points, sequence and safe distance are centralized in
 `src/shared/game/config.ts`. Ship hitboxes and islands use circles. Damage visuals
-use sprite tint; explosions use supplied sprites. Local enemy steering avoids islands.
+use progressively damaged sail/wreck sprites; explosions use supplied sprites.
+Local enemy steering avoids islands. Player and enemy overhead bars show remaining
+health; the player also has a semantic HUD indicator.
 
 ## Ranking, history and registration
 
@@ -128,10 +130,23 @@ Run `npm run profile:memory` to capture lifecycle heap snapshots and retaining p
 Raw snapshots stay local in docs/evidence/heap; compact summaries are delivery artifacts.
 The Xiaomi Android acceptance procedure is in docs/REAL-DEVICE-CHECK.md.
 See docs/VISUAL-DESIGN.md for the illustrated interface and reviewed screen captures.
+The final requirement review is in docs/FINAL-REVIEW.md. Current accepted checks and
+remaining publication steps are recorded at the top of docs/DELIVERY-STATUS.md.
+The final GPU fixture measured 59.99 average FPS and 16.7 ms p95 frame interval;
+see docs/evidence/profile-gpu-final.json for the environment and entity samples.
 
 ## Deployment
 
 Production command: `npm run build`; static output: `dist`. The project includes
 Vercel/Netlify settings. Do not publish dist-test. No environment variables are needed.
 Verify loading/refresh, service worker startup, Options persistence and match recovery
-on the public URL. The public URL will be recorded here after deployment is completed.
+on the public URL. Public deployment: https://desafio-game.vercel.app/.
+The latest automated check found that this deployment predates the local Controls
+and Network scenarios dialogs. Push the final revision and check the new deployment
+before submitting the challenge.
+
+`node scripts/check-delivery.mjs` checks the production build locally, including a
+real round without the test probe. After deploying, run
+`node scripts/check-delivery.mjs https://desafio-game.vercel.app/` to verify the
+published controls, service worker, persistent results and matching asset hashes.
+It uses an isolated browser profile and records results under docs/evidence.

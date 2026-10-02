@@ -47,6 +47,14 @@ Timing/resource/stream objects and native MessagePorts remain among the growing
 groups. This confirms the specific cleanup regression checks, not a flat heap or
 absence of every leak.
 
+The final delivery-layout repeat finds zero Simulation fingerprints and four
+MessageEvents at 1/5/15 checkpoints. DOM nodes remain 228 and listeners 216. Used
+heap is 6,687,212 / 7,604,036 / 8,376,308 bytes. The preceding illustrated-layout
+report is preserved as heap-summary-before-delivery.json and
+heap-retainers-before-delivery.json; heap-summary.json and heap-retainers.json now
+contain this final repeat. Native/resource/stream/timing objects still grow, so
+that remaining allocation/retention has not been fully attributed.
+
 ## Gameplay
 
 Regression cases cover Chasers around both islands from both horizontal directions,
@@ -81,5 +89,9 @@ The ring opacity increased from 50% to 75% after the secondary background measur
 These calculations do not certify every rendered state or screen-reader behavior.
 Reproduce with `node scripts/check-contrast.mjs`.
 
-Physical Xiaomi Android checks remain pending. Follow ../REAL-DEVICE-CHECK.md and
-record device/browser versions plus PASS/FAIL/NOT TESTED for each item.
+Physical Xiaomi Android checks are partial: the user confirmed rotation works and
+reported some improvement after the orientation layout adjustment. Follow
+../REAL-DEVICE-CHECK.md and record device/browser versions plus PASS/FAIL/NOT TESTED
+for remaining items. The final automated touch checks turn both ways and combine
+movement/fire in portrait and landscape; they do not replace physical-device or
+TalkBack acceptance.

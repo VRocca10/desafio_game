@@ -7,7 +7,8 @@ background. Desktop panels retain their proportions. The floating utility panel
 has been removed. Controls and Network scenarios use compact links below the menu
 tabs and open illustrated modal dialogs with keyboard focus containment/restoration.
 Last result is available in the same row when a completed result exists; sound is
-configured in Options. These changes have not yet been tested.
+configured in Options. Their focus and scenario reset flows are now covered by
+desktop/mobile browser tests.
 
 Options retains editable numeric fields and explicit validation. Its plus/minus
 controls adjust the session by ten seconds and spawn interval by one second;
@@ -42,13 +43,14 @@ compact HUD above the arena. Pixi uses a uniform contain scale in both layouts;
 water is limited to the actual world bounds, making unused space distinguishable
 from playable water. Safe-area insets protect controls from cutouts and system
 navigation. No gameplay dimensions, collision rules or spawn positions change
-when rotating. These layout adjustments await real-device confirmation and the
-deferred validation phase.
+when rotating. Orientation/touch checks and landscape pause screenshots now cover
+these layouts; complete physical-device acceptance remains partial.
 
 `node scripts/review-ui.mjs` produces desktop/mobile captures under evidence/ui/.
-Previously reviewed Playwright baselines cover menu, arena, result, options, ranking and
-history on both Windows Chromium projects. The history screenshot fixes the date
-to make repeat comparisons deterministic. They predate the newest layout and
-requirements changes and must be updated during the deferred testing phase.
+Reviewed Playwright baselines cover menu, arena, result, options, ranking, history
+and landscape arena/pause on both Windows Chromium projects (sixteen PNGs). The
+history screenshot fixes the date to make repeat comparisons deterministic. The
+latest baselines and evidence/ui copies include the updated menu, player health
+bar, mobile arena boundaries, side controls and compact pause dialog.
 To reproduce the application, build
 normally and run preview; do not serve dist-test to end users.

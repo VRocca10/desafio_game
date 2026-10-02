@@ -16,7 +16,10 @@ Controls: W/up forward, A/D or arrows turn, Space front cannon, Q/E broadsides,
 Escape pause. Hold touch buttons to steer and shoot simultaneously.
 Both mobile orientations preserve the full logical 960 x 600 arena.
 
-Known limits: circle ship hitboxes, simple local island avoidance and tint-based damage.
+Known limits: circle ship hitboxes and simple local island avoidance. Damaged sails
+and wreck stages use the supplied ship sprites. Portrait presents the complete
+arena in an 8:5 panel; landscape reserves side areas for controls and uses a compact
+HUD. Player/enemy overhead health bars supplement the semantic React HUD.
 Options and result persistence live outside combat; HTTP registration never controls
 the simulation. Browser combat tests and visual baselines live under tests/e2e.
 Shared textures intentionally stay in the Assets cache between rounds; per-round

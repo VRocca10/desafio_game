@@ -70,7 +70,14 @@
   .battle-dialog-content, .pause-options { min-height: 400px; gap: 16px; }
   .battle-result-score { font-size: 64px; }
 }
-@media (max-height: 600px) { .battle-dialog { min-height: 0; padding-block: 16px; } .battle-dialog-content, .pause-options { min-height: 0; gap: 12px; } .battle-dialog-content .menu-action { height: 58px; } .battle-result-score { font-size: 52px; } }
+@media (max-height: 600px) {
+  .battle-dialog { min-height: 0; padding: 12px 20px; border-width: 20px 16px; border-image-width: 20px 16px; }
+  .battle-dialog-content, .pause-options { min-height: 0; gap: 8px; }
+  .battle-dialog-content .captain-heading { font-size: 28px; line-height: 1.1; margin-bottom: 4px; }
+  .battle-dialog-subtitle { font-size: 14px; margin-bottom: 0; }
+  .battle-dialog-content .menu-action { height: 52px; }
+  .battle-result-score { font-size: 52px; }
+}
 @media (max-height: 480px) { .game-hud { top: 8px; } .game-controls { bottom: 8px; } .battle-touch-controls { grid-template-rows: 48px 48px; grid-template-columns: repeat(3, 48px) 1fr repeat(3, 48px); } .battle-touch-controls .round-control { width: 48px; height: 48px; padding: 12px; } .battle-brand { bottom: 125px; width: 70px; } .battle-key-guide { display: none; } }
 
 .battle-touch-controls { touch-action: none; user-select: none; -webkit-user-select: none; }
@@ -99,8 +106,8 @@
   .battle-home.round-control { top: 54px; }
   .battle-sound[data-slot] { left: 0; top: 50px; }
   .game-viewport { inset: 60px max(128px, calc(env(safe-area-inset-right) + 112px)) max(12px, env(safe-area-inset-bottom)) max(128px, calc(env(safe-area-inset-left) + 112px)); width: auto; height: auto; flex: none; background: #164e63; border-radius: 10px; }
-  .game-controls { inset: 0; width: 100%; height: 100%; padding: 0; gap: 0; }
-  .battle-touch-controls { display: block; }
+  .game-controls { display: block; inset: 0; width: 100%; height: 100%; padding: 0; gap: 0; }
+  .battle-touch-controls { position: absolute; inset: 0; display: block; }
   .battle-touch-controls .round-control { position: absolute; width: 44px; height: 44px; padding: 11px; }
   .battle-touch-controls [data-action=forward] { left: max(41px, calc(env(safe-area-inset-left) + 33px)); top: calc(50% - 30px); }
   .battle-touch-controls [data-action=left] { left: max(16px, calc(env(safe-area-inset-left) + 8px)); top: calc(50% + 22px); }
