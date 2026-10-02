@@ -43,13 +43,21 @@ provide focus containment and explicit resume/result actions.
 
 The renderer caches supplied textures using Pixi Assets. ResizeObserver scales a
 fixed 960 x 600 scene to fit the canvas, with initial resolution capped at 2. Rendering
-uses an explicit RAF rather than the automatic Pixi ticker. HUD/effect geometry is
-rebuilt each frame; entity sprites are reused by ID and destroyed when removed.
+uses an explicit RAF rather than the automatic Pixi ticker. Entity sprites,
+projectile Graphics and health-bar geometry are retained by ID; frames update
+transforms, fill scale and alpha. Removed entities release their display objects.
 
 Async initialization checks cancellation after renderer setup and image loading.
 Unmount cancels RAF, removes input listeners, destroys scene/application resources
 and disconnects ResizeObserver. Shared textures remain cached for future rounds.
 Loading failures expose retry. React Strict Mode remains enabled in development.
+
+Teardown explicitly releases the WebGL back-buffer shader before destroying the
+application. Pixi 8.21.0's back-buffer system otherwise leaves its BindGroup change
+listener attached to Texture.WHITE.source. Access to `_bigTriangleShader` is guarded
+and version-specific; reassess it on Pixi upgrades. The shader cleanup preserves
+shared programs and cached texture sources. See docs/evidence/MEMORY-REVIEW.md for
+the retaining path and 100-cycle verification.
 
 ## Audio
 
@@ -61,7 +69,9 @@ active combat and actual movement. Automatic focus pause silences all current so
 Manual pause/resume and match completion have short cues. Suspended contexts do not
 queue old combat effects; user gestures unlock playback where required.
 
-The menu owns one HTML audio loop, pauses it on focus loss and stops it on unmount.
+The menu owns one HTML audio loop, pauses it on focus loss and releases its source
+with removeAttribute/load on unmount. Effect setup restores that source during
+Strict Mode replay.
 Both contexts use the same persisted mute preference. Missing audio is non-blocking.
 
 ## Local persistence
@@ -90,8 +100,9 @@ score, actual active duration, reason and the full configuration snapshot.
 - GET /api/history?page=&playerId=: player-only records ordered newest first, then ID.
 
 Axios owns transport with a 5-second timeout. TanStack Query keys include resource,
-page and player/config identity. Queries consume AbortSignal, refetch on mount and
-retry once. Mutations are explicit and non-retrying; a busy guard prevents overlapping
+page and player/config identity. Cached reads have a 30-second stale time, but
+lists always refetch when mounted, including returning to a tab. Queries consume
+AbortSignal and retry once. Mutations are explicit and non-retrying; a busy guard prevents overlapping
 retry batches. Successful writes invalidate all match queries. Pending matches are
 available for manual retry after reload. New gameplay is independent of submissions.
 
@@ -126,11 +137,18 @@ fixture gives the stationary player extra initial health to keep the whole measu
 active. This is explicitly an instrumented stress test, not a claim about every device
 or ordinary player performance. See the evidence report for environment and limitations.
 
-The memory-snapshot command captures three post-GC menu snapshots and checks for
-retained Simulation instances and accumulating service-worker messages. MSW 3.0.1
+The memory-snapshot command runs 100 cycles by default, taking post-GC menu
+snapshots after cycles 1/5/15/30/60/100. It checks retained Simulation fingerprints,
+service-worker messages, native ports/streams/audio contexts and shared white
+texture listeners. A separate 30-cycle audio-enabled repeat covers audio cleanup.
+MSW 3.0.1
 constructs unused default sources when imported; the app terminates those exported
 defaults before setupWorker constructs its active sources. This prevents unresolved
 worker promises retaining each incoming message. Review this workaround on MSW updates.
+MSW also transfers cloned response bodies to the page for lifecycle observation.
+The app cancels those otherwise-unused bodies on mocked and bypassed response
+events, releasing cross-realm streams and ports without cancelling actual client
+responses. No dependency or generated worker files are patched.
 Set PROFILE_GPU=1 to request D3D11 hardware rendering on Windows; the profile aborts
 if it observes SwiftShader or another software renderer.
 
@@ -145,6 +163,42 @@ The React HUD and touch controls overlay the canvas with semantic labels and sup
 UI art. Captain's Log uses API data with aligned columns and existing query/paging
 semantics. Menu navigation and Options remain React components rather than flattened
 screenshots. The supplied scene background is reserved for menu screens.
+
+## Balance decisions and limitations
+
+The typed balance source is `src/shared/game/config.ts`. Options overrides only
+duration and spawn interval; all other values stay in the immutable round snapshot.
+
+| Default | Value | Intended tradeoff |
+| --- | --- | --- |
+| Duration / spawn interval | 90 s / 4 s | Short rounds with a gradual increase in enemy density; Options permits 60–180 s and 1–10 s |
+| Player / enemy health | 100 / 40 | An enemy needs two 20-damage projectile hits; player survival is finite |
+| Projectile / Chaser impact damage | 20 / 25 | Contact is more costly than one projectile hit and awards no destruction point |
+| Player / enemy speed | 170 / 65 world units per second | The player can escape pursuit, while turning and obstacles still constrain movement |
+| Turn speed | 2.6 radians per second | Allows directional aiming without instant turns |
+| Projectile speed / lifetime | 360 units/s / 1.8 s | Nominal travel is 648 units; bounds, islands and hits can remove a shot sooner |
+| Front / side / enemy cooldown | 0.35 s / 0.9 s / 1.8 s | Broadside fires three parallel shots but has a longer cooldown; each weapon has its own timer |
+| Shooter range / spawn clearance | 310 / 280 world units | Shooters approach before firing; spawn checks reject nearby, blocked and occupied points |
+
+The alternating Chaser/Shooter sequence and four corner spawn points are
+deterministic. If no point is safe, that spawn attempt produces no enemy rather
+than forcing an unsafe placement. Circular hitboxes favor predictable collision
+rules over exact sprite outlines. Steering targets the supplied two-island map;
+it does not guarantee routing through arbitrary future terrain.
+
+Ranking and history simulate REST transport but persist in the current browser;
+they are not a shared multiplayer service. Rival records are fixtures. Storage
+restrictions prevent durable recovery, and clearing site data resets that browser's
+records. Portrait and landscape preserve the whole arena, so narrow portrait
+screens display smaller ships instead of cropping the world.
+
+Visual baselines target Windows Chromium. The 59.99 FPS profile covers a documented
+desktop GPU and a stationary, muted, extra-health fixture, not every device or
+spawn setting. Memory checks fix identified retention paths; total heap still
+includes browser/DevTools buffers and V8 metadata and is not certified flat.
+Physical Xiaomi gameplay was accepted by the user; TalkBack and phone FPS are not
+recorded. Asset provenance and the upstream license situation are documented in
+docs/ASSETS.md.
 
 ## References
 

@@ -16,6 +16,34 @@ On Windows PowerShell with restricted script execution, use `npm.cmd` / `npx.cmd
 MSW runs in development and published builds. Serve over HTTPS or localhost;
 `public/mockServiceWorker.js` must be accessible at the origin root.
 
+## Environment variables
+
+The application requires no environment variables or .env file for development,
+tests or production. Axios uses same-origin `/api` URLs handled by MSW.
+Optional variables below configure local profiling tools only:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| PROFILE_GPU | unset | Set to 1 to request Windows D3D11 hardware rendering; aborts if a software renderer is detected |
+| PROFILE_LABEL | profile | Name for the frame/CPU profiling report |
+| MEMORY_CYCLES | 100 | Positive integer number of start/exit cycles |
+| MEMORY_AUDIO | unset | Set to 1 to enable audio in the memory repeat; otherwise audio is muted |
+| MEMORY_LABEL | heap | Folder/report prefix for memory evidence |
+| MEMORY_PORT | 4175 | Preview server port for memory profiling |
+
+For a PowerShell audio-enabled memory repeat:
+
+```powershell
+npm.cmd run build:test
+$env:MEMORY_AUDIO = '1'
+$env:MEMORY_CYCLES = '30'
+$env:MEMORY_LABEL = 'heap-audio'
+node scripts/memory-snapshots.mjs
+```
+
+These values remain in the current terminal session. Open a new terminal to
+return to the defaults.
+
 ## Play
 
 - W / up: move forward. A/D or left/right: turn.
@@ -103,7 +131,12 @@ same steps using outage. The current automated tests cover both core data/UI pat
 | npm run test:e2e:ui | Interactive Playwright runner |
 | npm run test:report | Open latest HTML report |
 | npm run profile | Build and run the three-minute profiling scenario |
+| npm run profile:memory | Build and check 100 post-GC lifecycle cycles and retaining paths |
 | npm run mocks:init | Regenerate the browser worker |
+
+Build before production preview with `npm run build`, then `npm run preview`.
+Run `npm run build:test` before `npm run test:e2e:ui`; `npm run test:e2e`
+already creates that test build automatically.
 
 Production builds do not include the `window.__battle` test driver. Test builds
 expose deterministic starting fixtures, a read-only snapshot and fixed-step clock
@@ -113,7 +146,8 @@ cases even though Playwright runs them. Tests start their own preview on port 41
 The profiling script uses port 4175. Keep these ports free.
 
 Visual baselines live beside visual.spec.ts and currently target Windows Chromium.
-Review differences before updating with `npx playwright test visual --update-snapshots`.
+Run `npm run build:test` before reviewing differences and updating with
+`npx playwright test visual --update-snapshots`.
 Other operating systems need separately reviewed platform baselines. HTML reports are
 in playwright-report; failure screenshots/traces in test-results. These generated
 folders are ignored; publish them as delivery artifacts, not application assets.
