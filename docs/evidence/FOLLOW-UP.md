@@ -55,6 +55,34 @@ heap-retainers-before-delivery.json; heap-summary.json and heap-retainers.json n
 contain this final repeat. Native/resource/stream/timing objects still grow, so
 that remaining allocation/retention has not been fully attributed.
 
+### Subsequent memory closure review
+
+The 2026-10-02 review identified two further mechanisms. MSW transfers a cloned
+response body to the page for its response events; without a consumer, these
+streams keep native cross-realm MessagePorts active. The application cancels
+only the observed response bodies from `response:bypass` and `response:mocked`.
+The actual fetch/API bodies are separate and continue to work. No dependency or
+generated service-worker files are changed.
+
+Pixi 8.21.0's GlBackBufferSystem creates a shader bound to Texture.WHITE.source
+but its destroy method only releases the back-buffer texture. One BindGroup and
+its change listener survive each renderer. The application's teardown explicitly
+destroys that renderer's shader before Application.destroy, including cancelled
+initialization and failures. This guarded access to `_bigTriangleShader` is a
+version-specific workaround; revisit it when upgrading Pixi. Shared loaded
+textures and shader programs are not destroyed by this extra cleanup. Menu audio
+also clears its source and calls load on unmount to release pending media loading;
+the effect restores the source on Strict Mode replay.
+
+The extended repeat passes 100 cycles: zero abandoned-world fingerprints, zero
+native streams/audio contexts, two stable native MessagePorts, no Texture.WHITE
+change listeners, 228 DOM nodes and 216 listeners. Browser prototypes are counted
+separately from native instances. Total heap still includes growing Inspector
+network logs, browser performance buffers and V8 dependent-code metadata. The
+specific app-controlled retention mechanisms are fixed; absence of every possible
+leak and a flat total heap are not certified. MEMORY-REVIEW.md contains the current
+numbers, artifacts and reproduction commands. Earlier paragraphs are historical.
+
 ## Gameplay
 
 Regression cases cover Chasers around both islands from both horizontal directions,
@@ -89,9 +117,7 @@ The ring opacity increased from 50% to 75% after the secondary background measur
 These calculations do not certify every rendered state or screen-reader behavior.
 Reproduce with `node scripts/check-contrast.mjs`.
 
-Physical Xiaomi Android checks are partial: the user confirmed rotation works and
-reported some improvement after the orientation layout adjustment. Follow
-../REAL-DEVICE-CHECK.md and record device/browser versions plus PASS/FAIL/NOT TESTED
-for remaining items. The final automated touch checks turn both ways and combine
-movement/fire in portrait and landscape; they do not replace physical-device or
-TalkBack acceptance.
+On 2026-10-02 the user confirmed that deployment matches the layout changes and
+Xiaomi gameplay is OK. Exact device/browser versions and TalkBack results are not
+recorded. ../REAL-DEVICE-CHECK.md remains a regression checklist. The final
+automated touch checks turn both ways and combine movement/fire in both layouts.

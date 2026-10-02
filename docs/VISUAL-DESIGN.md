@@ -44,7 +44,8 @@ water is limited to the actual world bounds, making unused space distinguishable
 from playable water. Safe-area insets protect controls from cutouts and system
 navigation. No gameplay dimensions, collision rules or spawn positions change
 when rotating. Orientation/touch checks and landscape pause screenshots now cover
-these layouts; complete physical-device acceptance remains partial.
+these layouts; the user subsequently confirmed Xiaomi gameplay is OK. Exact
+device/browser versions and TalkBack results are not recorded.
 
 `node scripts/review-ui.mjs` produces desktop/mobile captures under evidence/ui/.
 Reviewed Playwright baselines cover menu, arena, result, options, ranking, history

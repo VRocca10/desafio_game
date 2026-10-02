@@ -13,6 +13,7 @@ test-results/
 dist
 dist-test
 docs/evidence/heap/
+docs/evidence/**/*.heapsnapshot
 dist-ssr
 *.local
 

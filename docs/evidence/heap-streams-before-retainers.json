@@ -1,0 +1,707 @@
+[
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 120,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 121,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 122,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "HTMLDocument",
+        "edge": 5,
+        "type": "element"
+      },
+      {
+        "node": "blink::TreeOrderedMap",
+        "edge": 64,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<blink::AtomicString, blink::KeyValuePair<blink::AtomicString, cppgc::internal::BasicMember<blink::TreeOrderedMap::MapEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<blink::AtomicString>, blink::HashTraits<cppgc::internal::BasicMember<blink::TreeOrderedMap::MapEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<blink::AtomicString>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::TreeOrderedMap::MapEntry",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-direction=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_r_2d_\" data-slot=\"tabs-trigger\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 has-data-[icon=inline-end]:pr-1 has-data-[icon=inline-start]:pl-1 aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-muted-foreground dark:hover:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm group-data-[variant=line]/tabs-list:data-active:shadow-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-active:bg-transparent dark:group-data-[variant=line]/tabs-list:data-active:border-transparent dark:group-data-[variant=line]/tabs-list:data-active:bg-transparent data-active:bg-background data-active:text-foreground dark:data-active:border-input dark:data-active:bg-input/30 dark:data-active:text-foreground after:absolute after:bg-foreground after:opacity-0 after:transition-opacity group-data-horizontal/tabs:after:inset-x-0 group-data-horizontal/tabs:after:bottom-[-5px] group-data-horizontal/tabs:after:h-0.5 group-data-vertical/tabs:after:inset-y-0 group-data-vertical/tabs:after:-right-1 group-data-vertical/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-active:after:opacity-100 menu-secondary\">",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::NodeRareData",
+        "edge": 14,
+        "type": "element"
+      },
+      {
+        "node": "blink::NodeRareData::DataFieldWrapper<blink::BasicHeapHashMap<blink::internal::HeapCollectionType::kDisallowNew, cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, blink::KeyValuePair<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 1,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "RemotePlayback",
+        "edge": 188,
+        "type": "element"
+      },
+      {
+        "node": "<audio src=\"/assets/sounds/ocean_ambience_loop.wav\" loop=\"\" preload=\"auto\">",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "<div pseudo=\"-webkit-media-controls\" class=\"phase-pre-ready state-no-source\">",
+        "edge": 18,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 6,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "RemotePlayback",
+        "edge": 188,
+        "type": "element"
+      },
+      {
+        "node": "<audio src=\"/assets/sounds/ocean_ambience_loop.wav\" loop=\"\" preload=\"auto\">",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "<div pseudo=\"-webkit-media-controls\" class=\"phase-pre-ready state-no-source\">",
+        "edge": 18,
+        "type": "element"
+      },
+      {
+        "node": "<input type=\"range\" step=\"any\" pseudo=\"-webkit-media-controls-timeline\" max=\"12\" min=\"0\" aria-label=\"audio time scrubber\" aria-valuetext=\"elapsed time: 0:00\" aria-description=\"total time: 0:12\" disabled=\"\">",
+        "edge": 11,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 4,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 91,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 92,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 93,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ReadableStream",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 104,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::(anonymous namespace)::CrossRealmTransformReadable",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStreamDefaultController",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStream",
+        "edge": 2,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ReadableStream",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 105,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::(anonymous namespace)::CrossRealmTransformReadable",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStreamDefaultController",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStream",
+        "edge": 2,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ReadableStream",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 106,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::(anonymous namespace)::CrossRealmTransformReadable",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStreamDefaultController",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "ReadableStream",
+        "edge": 2,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "blink::NetworkResourcesData::ResourceData",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::DevToolsSession",
+        "edge": "v8_inspector::V8InspectorSessionImpl::V8InspectorSessionImpl(V8InspectorImpl *, int, int, V8Inspector::ManagedChannel *, StringView, V8Inspector::ClientTrustLevel, std::shared_ptr<V8DebuggerBarrier>, V8EmbedderState)@..\\..\\v8\\src\\inspector\\v8-inspector-session-impl.cc:114",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::InspectorAgent, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 4,
+        "type": "element"
+      },
+      {
+        "node": "blink::InspectorNetworkAgent",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<blink::String, blink::KeyValuePair<blink::String, cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<String>, blink::HashTraits<cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<String>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData::ResourceData",
+        "edge": 99,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "blink::NetworkResourcesData::ResourceData",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::DevToolsSession",
+        "edge": "v8_inspector::V8InspectorSessionImpl::V8InspectorSessionImpl(V8InspectorImpl *, int, int, V8Inspector::ManagedChannel *, StringView, V8Inspector::ClientTrustLevel, std::shared_ptr<V8DebuggerBarrier>, V8EmbedderState)@..\\..\\v8\\src\\inspector\\v8-inspector-session-impl.cc:114",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::InspectorAgent, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 4,
+        "type": "element"
+      },
+      {
+        "node": "blink::InspectorNetworkAgent",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<blink::String, blink::KeyValuePair<blink::String, cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<String>, blink::HashTraits<cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<String>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData::ResourceData",
+        "edge": 102,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "blink::NetworkResourcesData::ResourceData",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::DevToolsSession",
+        "edge": "v8_inspector::V8InspectorSessionImpl::V8InspectorSessionImpl(V8InspectorImpl *, int, int, V8Inspector::ManagedChannel *, StringView, V8Inspector::ClientTrustLevel, std::shared_ptr<V8DebuggerBarrier>, V8EmbedderState)@..\\..\\v8\\src\\inspector\\v8-inspector-session-impl.cc:114",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::InspectorAgent, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 4,
+        "type": "element"
+      },
+      {
+        "node": "blink::InspectorNetworkAgent",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<blink::String, blink::KeyValuePair<blink::String, cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<String>, blink::HashTraits<cppgc::internal::BasicMember<blink::NetworkResourcesData::ResourceData, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<String>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::NetworkResourcesData::ResourceData",
+        "edge": 138,
+        "type": "element"
+      }
+    ]
+  }
+]

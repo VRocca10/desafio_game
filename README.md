@@ -126,7 +126,8 @@ progress. docs/ASSETS.md records supplied asset provenance. src/features/game/RE
 lists implementation modules. Profiling evidence is under docs/evidence.
 See docs/evidence/PERFORMANCE.md for the measured rendering optimization, CPU
 timings, before/after results and remaining hardware/memory validation limits.
-Run `npm run profile:memory` to capture lifecycle heap snapshots and retaining paths.
+Run `npm run profile:memory` to capture 100 lifecycle cycles and retaining paths.
+The latest MSW/Pixi cleanup findings are in docs/evidence/MEMORY-REVIEW.md.
 Raw snapshots stay local in docs/evidence/heap; compact summaries are delivery artifacts.
 The Xiaomi Android acceptance procedure is in docs/REAL-DEVICE-CHECK.md.
 See docs/VISUAL-DESIGN.md for the illustrated interface and reviewed screen captures.
@@ -141,9 +142,10 @@ Production command: `npm run build`; static output: `dist`. The project includes
 Vercel/Netlify settings. Do not publish dist-test. No environment variables are needed.
 Verify loading/refresh, service worker startup, Options persistence and match recovery
 on the public URL. Public deployment: https://desafio-game.vercel.app/.
-The latest automated check found that this deployment predates the local Controls
-and Network scenarios dialogs. Push the final revision and check the new deployment
-before submitting the challenge.
+The user confirmed on 2026-10-02 that this deployment matches the layout changes
+and that gameplay on Xiaomi Android is OK. The older deployed-smoke.json records
+the version before that update. Subsequent memory cleanup changes must also be
+committed and published with the final revision.
 
 `node scripts/check-delivery.mjs` checks the production build locally, including a
 real round without the test probe. After deploying, run

@@ -10,6 +10,16 @@ export function MenuAudio({ hiddenControls = false }: { hiddenControls?: boolean
 
   useEffect(() => {
     const audio = audioRef.current!
+    audio.src = '/assets/sounds/ocean_ambience_loop.wav'
+    return () => {
+      audio.pause()
+      audio.removeAttribute('src')
+      audio.load()
+    }
+  }, [])
+
+  useEffect(() => {
+    const audio = audioRef.current!
     let disposed = false
     audio.volume = 0.112
     const play = () => {

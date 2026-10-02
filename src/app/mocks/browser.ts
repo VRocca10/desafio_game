@@ -7,3 +7,9 @@ import { handlers } from './handlers'
 // unused defaults before constructing the application's active worker.
 await Promise.all(defaultNetworkOptions.sources.map((source) => 'terminate' in source ? source.terminate() : undefined))
 export const worker = setupWorker(...handlers)
+
+const releaseObservedResponse = ({ response }: { response: Response }) => {
+  if (response.body && !response.body.locked) void response.body.cancel().catch(() => {})
+}
+worker.events.on('response:bypass', releaseObservedResponse)
+worker.events.on('response:mocked', releaseObservedResponse)

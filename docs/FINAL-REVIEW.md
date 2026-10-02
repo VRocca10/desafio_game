@@ -1,17 +1,19 @@
 # Final requirements review
 
 Review date: 2026-10-02. Specification: CHALLENGE.original.md. This reviews the
-local working tree; the public deployment must be refreshed to match it.
+local working tree. The user subsequently confirmed that the public deployment
+matches the layout changes and that gameplay on the Xiaomi is OK.
 
 ## Implementation and evidence
 
 Final local suite: 78 passing executions (39 tests, desktop/mobile Chromium),
 including 16 reviewed visual PNGs. Production/test builds, typecheck and lint
 passed. The local production smoke completed a real round without the test clock.
-Five development Strict Mode lifecycle cycles passed. The final memory repeat
-passed its abandoned-world/MessageEvent checks, while total heap growth remains
-documented. See DELIVERY-STATUS.md for the final profiling measurement and artifact
-links.
+Five development Strict Mode lifecycle cycles passed. The subsequent 100-cycle
+memory review also checks native ports/streams/audio contexts and shared Pixi
+texture listeners after fixing two additional retention mechanisms. Total heap
+growth remains documented; see evidence/MEMORY-REVIEW.md. DELIVERY-STATUS.md links
+the final profiling measurement and other artifacts.
 
 The final isolated Radeon/D3D11 profile completed three minutes at 59.99 average
 FPS and 16.7 ms p95 frame interval, with sampled maxima of 24 ships and 7 projectiles.
@@ -31,7 +33,7 @@ The full report is evidence/profile-gpu-final.json.
 | Visual regression | Versioned desktop/mobile baselines for menu, arena, result, Options, ranking, history and landscape arena/pause; visual.spec.ts |
 | Performance and memory | Optimized real-time 180-second GPU fixture, per-minute frames/CPU/entity samples, five lifecycle counters and 1/5/15 heap snapshots; performance and memory reports under evidence/ |
 | Production behavior | check-delivery.mjs starts a real uninstrumented round, checks direct load/refresh, service worker, both orientations, paused settings, completed-result persistence and both lists; production-smoke.json |
-| Delivery | Lockfile/assets/fixtures/mocks/source/tests and English README/architecture included; public URL exists but its tested bundle differs from the local production output |
+| Delivery | Lockfile/assets/fixtures/mocks/source/tests and English README/architecture included; public deployment and Xiaomi gameplay subsequently confirmed by the user |
 
 ## Fixes during this review
 
@@ -48,19 +50,14 @@ The first-review failure traces are preserved under evidence/failure-traces.
 The initial delivery audit and earlier profiling comparisons are historical;
 consult DELIVERY-STATUS.md for final run results and current artifact names.
 
-## Remaining delivery actions
+## Delivery confirmation
 
-1. Commit all final source, tests, visual baselines and evidence; push the production
-   branch and wait for the Vercel deployment to finish.
-2. Run `node scripts/check-delivery.mjs https://desafio-game.vercel.app/` against the
-   new deployment. The existing deployed-smoke.json fails because the public menu
-   lacks the local Controls dialog; bundle hashes also differ. It does not establish
-   that the latest local version is deployed.
-3. On Xiaomi, confirm simultaneous steering/fire, rotation, pause/resume, result
-   recovery and menu legibility on the final deployment. Rotation was confirmed by
-   the user; the later orientation layout was reported as somewhat improved.
-   Device model and browser/Android versions have not been recorded. Follow
-   REAL-DEVICE-CHECK.md for the remaining manual checks.
+On 2026-10-02, the user confirmed that deployment matches the changes and that
+mobile gameplay is OK. The older deployed-smoke.json records a historical failed
+check before that update. Device model and browser/Android versions have not been
+recorded. This functional confirmation does not certify TalkBack or phone FPS.
+The subsequent memory cleanup changes must be committed/published with the final
+revision; this review does not perform a deployment.
 
 ## Practical limits
 
@@ -76,7 +73,7 @@ documented desktop hardware; it is not a real-phone FPS certification. Memory
 diagnostics investigate growth and check abandoned-world/MessageEvent retention;
 they do not prove a flat heap or the absence of every native/browser resource leak.
 Contrast evidence measures configured text/focus colors, not every pixel of the
-illustrated artwork. TalkBack/physical-device acceptance remains partial.
+illustrated artwork. Physical gameplay is user-confirmed; TalkBack is not recorded.
 
 The requested estimate before starting the challenge is an administrative item;
 its original communication cannot be established from source/test evidence.

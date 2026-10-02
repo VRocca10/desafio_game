@@ -24,11 +24,17 @@ rotation directions with real CDP touch, simultaneous movement/fire, support-dia
 focus/reset, HTTP/connection/timeout recovery and next-round configuration after
 editing paused Options. Refer to FINAL-REVIEW.md for the requirements mapping.
 
-Latest 1/5/15 heap checkpoints find zero retained-world fingerprints and four
-MessageEvents throughout. DOM nodes remain 228 and listeners 216. Heap usage is
-6,687,212 / 7,604,036 / 8,376,308 bytes. Remaining native/browser resource growth is
-documented, not claimed eliminated. See evidence/heap-summary.json,
-evidence/heap-retainers.json and evidence/FOLLOW-UP.md.
+The subsequent memory review fixed unused MSW response-observation streams and
+Pixi's undisposed back-buffer shader binding. The 100-cycle repeat finds zero
+retained-world fingerprints, zero native AudioContexts/ReadableStreams, two stable
+native MessagePorts and zero Texture.WHITE change listeners after teardown. DOM
+nodes remain 228 and listeners 216. Total heap is 6,701,360 bytes after cycle 1 and
+9,560,188 after cycle 100, including browser/DevTools and V8 metadata; a flat heap
+is not claimed. See evidence/MEMORY-REVIEW.md and its before/after reports.
+The separate 30-cycle audio-enabled repeat also passes. After the cleanup changes,
+20 targeted desktop/mobile browser regressions, five Strict Mode cycles, both
+builds, TypeScript and lint pass; evidence/memory-regression-tests.json records
+the targeted run. The 78-execution suite above predates this cleanup follow-up.
 
 Final isolated three-minute GPU measurement: **59.99 FPS average**, **16.7 ms p95
 frame interval**, round completed. The renderer was ANGLE AMD Radeon Graphics via
@@ -38,11 +44,11 @@ extra-health stationary player. Per-minute windows, CPU timings, entity counts a
 five lifecycle measurements are in evidence/profile-gpu-final.json. This covers
 the documented desktop setup, not phone FPS or every balance configuration.
 
-Public URL: https://desafio-game.vercel.app/. The public check found older bundles
-and no Controls button, so publication acceptance remains pending. Commit/push
-the final revision, wait for deployment and rerun the published check. Xiaomi
-acceptance is partial: rotation was confirmed and the user reported some layout
-improvement; remaining checks/device details are in REAL-DEVICE-CHECK.md.
+Public URL: https://desafio-game.vercel.app/. The user subsequently confirmed that
+deployment matches the changes and that Xiaomi gameplay is OK (2026-10-02).
+The older deployed-smoke.json describes the version before that update. Model,
+browser versions, TalkBack and phone FPS are not recorded. Subsequent memory
+cleanup changes still need to be committed/published with the final revision.
 
 The sections below preserve earlier implementation/check history. Their counts,
 pending tasks and profile measurements describe earlier revisions, not the final

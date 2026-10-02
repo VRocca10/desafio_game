@@ -1,14 +1,15 @@
 # Xiaomi Android acceptance check
 
-Status: partial user-reported device execution on Xiaomi Android. The user confirmed
-that rotation works after the touch-control adjustment, in portrait use. Exact model,
-Android/browser versions and the remaining checks have not been recorded. This
-confirmation does not establish acceptance of all mobile requirements.
+Status: functional gameplay accepted by the user on Xiaomi Android on 2026-10-02.
+The user confirmed that the updated deployment is aligned and mobile gameplay is
+OK. Exact model, Android/browser versions and item-by-item results have not been
+recorded. This confirmation does not certify TalkBack or phone FPS.
 
 The public HTTPS deployment can be opened directly on the phone. Local USB setup
 below remains available for development. The newest requirements/UI changes passed
 the automated desktop/mobile suite and local production smoke. The public deployment
-still has older bundles and must be updated before final physical-device acceptance.
+was subsequently confirmed as updated by the user. The procedure below remains
+available for future regression checks.
 
 ## Connect using USB and Chrome
 

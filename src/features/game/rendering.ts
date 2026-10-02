@@ -1,4 +1,4 @@
-import { Application, Assets, Container, Graphics, Sprite, Texture, Rectangle, TilingSprite } from 'pixi.js'
+import { Application, Assets, Container, Graphics, Sprite, Texture, Rectangle, TilingSprite, Shader } from 'pixi.js'
 import { islands, type Simulation, type Ship } from './model/simulation'
 
 const base = '/assets/png/retina/'
@@ -15,12 +15,19 @@ const damagePaths = [8, 9, 11, 14, 15, 17, 20, 21, 23].map(number => `${base}shi
 export async function createRenderer(host: HTMLElement, world: Simulation, signal: AbortSignal) {
   const app = new Application()
   let initialized = false
+  const destroyApplication = () => {
+    if ('backBuffer' in app.renderer) {
+      const shader: unknown = Reflect.get(app.renderer.backBuffer, '_bigTriangleShader')
+      if (shader instanceof Shader) shader.destroy()
+    }
+    app.destroy(true, { children: true, context: true })
+  }
   try {
     await app.init({ width: 960, height: 600, background: '#164e63', antialias: false, resolution: Math.min(devicePixelRatio || 1, 2), autoDensity: true, autoStart: false })
     initialized = true
-    if (signal.aborted) { app.destroy(true, { children: true, context: true }); return null }
+    if (signal.aborted) { destroyApplication(); return null }
     const textures = await Assets.load<Texture>([...Object.values(paths), ...damagePaths])
-    if (signal.aborted) { app.destroy(true, { children: true, context: true }); return null }
+    if (signal.aborted) { destroyApplication(); return null }
     app.canvas.setAttribute('aria-label', 'Naval battle arena')
     app.canvas.setAttribute('role', 'img')
     host.appendChild(app.canvas)
@@ -129,10 +136,10 @@ export async function createRenderer(host: HTMLElement, world: Simulation, signa
         }
         app.render()
       },
-      destroy() { observer.disconnect(); app.destroy(true, { children: true, context: true }); for (const texture of tileTextures.slice(1)) texture.destroy() },
+      destroy() { observer.disconnect(); destroyApplication(); for (const texture of tileTextures.slice(1)) texture.destroy() },
     }
   } catch (error) {
-    if (initialized) app.destroy(true, { children: true, context: true })
+    if (initialized) destroyApplication()
     throw error
   }
 }
