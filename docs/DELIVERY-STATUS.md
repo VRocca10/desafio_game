@@ -68,7 +68,9 @@ and Generator counts at 48 across 1/5/15 rounds. No abandoned Simulation is reac
 by the property-fingerprint check; DOM nodes/listeners remain constant. Total heap
 still grows and native MessagePort counts need further attribution. See
 evidence/FOLLOW-UP.md, heap-summary.json and heap-retainers.json for limits and evidence.
-Physical Xiaomi Android acceptance remains pending; follow REAL-DEVICE-CHECK.md.
+Physical Xiaomi Android acceptance is partial: the user confirmed that rotation
+works after the touch adjustment. Remaining checks and device/browser identification
+are pending; follow REAL-DEVICE-CHECK.md.
 
 ## Illustrated interface
 
@@ -88,6 +90,15 @@ See evidence/profile-gpu.json and evidence/PERFORMANCE.md. This covers the docum
 four-second-spawn stationary stress fixture at 1280×720, not every device or setting.
 
 ## Scope and limitations
+
+Latest changes, not yet validated: updated pause/result/ranking layouts, removal
+of the floating utility panel, sound in Options, touch input release/sliding and
+portrait insets, Controls/Network scenarios modal dialogs with scenario reset,
+Last result access after refresh, and the player's overhead health bar restored.
+The earlier 68 passing executions, HTML report, visual baselines and hardware
+profile describe the previously validated revision. No tests, builds, lint or
+profiling were run for these latest changes at the user's request. Update the
+baselines and rerun the required checks before final acceptance.
 
 All persistent mock data is browser-local, as required by this backend-free demo.
 It is not a shared internet leaderboard. A user who clears browser storage loses the

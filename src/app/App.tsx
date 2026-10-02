@@ -5,6 +5,7 @@ import { MatchHistoryPanel, useRegistration, RegistrationStatus } from '@/featur
 import { Options } from '@/features/options'
 import { Button } from '@/shared/components/ui/button'
 import { MenuScene } from '@/features/main-menu/components/MenuScene'
+import { NetworkScenarios } from './NetworkScenarios'
 
 const Game = lazy(() => import('@/features/game').then((module) => ({ default: module.Game })))
 
@@ -20,5 +21,5 @@ export default function App() {
     <p className="result-panel-score">{last.score}</p><p className="result-panel-subtitle">Points · {Math.floor(last.duration / 60).toString().padStart(2, '0')}:{Math.floor(last.duration % 60).toString().padStart(2, '0')} · {last.reason === 'sunk' ? 'Defeated' : 'Time up'}</p>
     <Button className="menu-action" onClick={() => setScreen('game')}>Play Again</Button><Button className="menu-action" onClick={() => setScreen('menu')}>Main Menu</Button><div className="text-xs text-muted-foreground">{status}</div>
   </section></MenuScene>
-  return <MainMenu onPlay={() => setScreen('game')} onOptions={() => setScreen('options')} rankingContent={<RankingPanel />} historyContent={<MatchHistoryPanel />} />
+  return <MainMenu onPlay={() => setScreen('game')} onOptions={() => setScreen('options')} rankingContent={<RankingPanel />} historyContent={<MatchHistoryPanel />} networkContent={<NetworkScenarios embedded onReset={registration.refresh} />} onLastResult={last ? () => setScreen('result') : undefined} />
 }

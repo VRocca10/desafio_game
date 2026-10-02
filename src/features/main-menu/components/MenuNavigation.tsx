@@ -3,8 +3,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/components/ui
 import { MenuActions } from './MenuActions'
 import { MenuPanel } from './MenuPanel'
 import type { MainMenuProps } from '../types'
+import type { ReactNode } from 'react'
 
-export function MenuNavigation({ rankingContent, historyContent, ...actions }: MainMenuProps) {
+export function MenuNavigation({ rankingContent, historyContent, supportContent, ...actions }: Omit<MainMenuProps, 'networkContent' | 'onLastResult'> & { supportContent: ReactNode }) {
   const [view, setView] = useState('harbor')
   const navigation = <TabsList aria-label="Captain's log" className="captain-tabs">
     <TabsTrigger value="ranking" className="menu-secondary">Ranking</TabsTrigger>
@@ -19,6 +20,7 @@ export function MenuNavigation({ rankingContent, historyContent, ...actions }: M
         <img className="menu-ship" src="/assets/png/retina/ships/ship_2.png" alt="" />
         <p className="menu-tagline">Navigate the islands. Survive the battle.</p>
         {view === 'harbor' && navigation}
+        {supportContent}
       </TabsContent>
       <TabsContent value="ranking" className="captain-ledger-content">
         {rankingContent}

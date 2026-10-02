@@ -1,6 +1,13 @@
 # Xiaomi Android acceptance check
 
-Status: awaiting device execution. Emulated Chromium tests do not establish real-device acceptance.
+Status: partial user-reported device execution on Xiaomi Android. The user confirmed
+that rotation works after the touch-control adjustment, in portrait use. Exact model,
+Android/browser versions and the remaining checks have not been recorded. This
+confirmation does not establish acceptance of all mobile requirements.
+
+The public HTTPS deployment can be opened directly on the phone. Local USB setup
+below remains available for development. The newest requirements/UI changes have
+not been tested or published by the coding agent.
 
 ## Connect using USB and Chrome
 
@@ -23,11 +30,12 @@ Record the exact Xiaomi model, Android version, Chrome version and refresh rate.
 | Hold Forward and Fire right with two fingers; add Turn left | Movement, turning and broadside fire work together |
 | Release fingers; slide a held finger off its button and release | Movement/fire stop; no stuck input |
 | Rotate during play | Canvas resizes; HUD and controls remain usable without page scrolling |
+| Inspect the latest portrait/landscape layout | Portrait shows the complete 8:5 arena with controls below; landscape places controls beside the arena; ships and islands retain their proportions |
 | Press Pause, resume, switch apps, return, lock/unlock the phone | Backgrounding pauses; explicit Resume is required; previous held inputs do not resume |
 | Play a complete round; inspect enemies near both islands | Ships go around land; new ships appear away from the player; no persistent stuck enemies |
 | Finish by timer and by sinking; use Play Again | Correct result and registration message; fresh health, score and timer |
 | Return to menu and open History / Ranking; refresh | Completed result persists and appears once; unfinished matches are absent |
-| Select outage, finish a round, refresh, select success, retry registration | Failure is understandable; recovery produces one record |
+| Open Network scenarios in the main menu, select outage, finish a round, refresh, select success, open Last result and retry registration | Failure is understandable; recovery produces one record |
 | Turn sound on/off, then refresh | Audio preference persists; background app has no battle sound |
 | Enable TalkBack and navigate menu, Options and pause/result dialogs | Controls have meaningful labels; status/failure messages are understandable; dialog navigation stays coherent |
 | Optional external keyboard: Tab, Shift+Tab, Enter, Escape, W/A/D, Space, Q/E | Visible focus; menu activation, battle controls, pause/resume work; focus stays inside the modal |

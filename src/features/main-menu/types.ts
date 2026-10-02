@@ -8,4 +8,6 @@ export interface MenuActionsProps {
 export interface MainMenuProps extends MenuActionsProps {
   rankingContent: ReactNode
   historyContent: ReactNode
+  networkContent: ReactNode
+  onLastResult?: () => void
 }

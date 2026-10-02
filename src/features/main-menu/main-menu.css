@@ -34,6 +34,16 @@
 .harbor-content { display: flex; flex-direction: column; align-items: center; }
 .menu-ship { height: 78px; width: auto; margin: 18px auto; }
 .menu-tagline { font-size: 14px; font-weight: 700; color: #e8d9b0; margin-bottom: 20px; }
+.menu-support-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 14px; margin-top: 14px; }
+.menu-support-links [data-slot] { color: #e8d9b0; font-size: 12px; min-height: 44px; padding: 8px; }
+.menu-support-links [data-slot]:focus-visible { outline: 3px solid #fff0b7; outline-offset: 2px; }
+.menu-support-dialog { margin: auto; width: min(780px, calc(100vw - 32px)); max-height: 90dvh; overflow-y: auto; color: #f5f0df; background-color: transparent; }
+.menu-support-dialog::backdrop { background: #071c2abf; }
+.menu-support-dialog > .menu-action { margin-top: 24px; }
+.menu-support-dialog .captain-heading { margin-bottom: 24px; }
+.network-scenarios-content select { min-height: 44px; color: #f5f0df; border: 1px solid #bdced3; }
+.network-scenarios-content select:focus-visible { outline: 3px solid #fff0b7; outline-offset: 3px; }
+@media (min-height: 850px) and (min-width: 800px) { .menu-panel.menu-support-dialog { min-height: auto; padding-top: 24px; } }
 .captain-tabs[data-slot], .captain-back[data-slot] { display: flex; justify-content: center; gap: 20px; height: auto; padding: 0; background: transparent; border: 0; border-radius: 0; margin-inline: auto; }
 .menu-action[data-slot] { flex: none; width: min(100%, 330px); font-size: 26px; font-weight: 900; }
 .captain-back[data-slot] { width: min(100%, 330px); }

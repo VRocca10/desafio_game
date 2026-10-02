@@ -3,24 +3,30 @@
 The menu, Options and Captain's Log follow the supplied sample_menu.png,
 sample_options.png, sample_ranking.png and sample_history.png references. They
 reuse the supplied panel, title, primary/secondary buttons, round controls and
-background. Desktop panels retain their proportions; narrow screens stack the
-utility area below the panel so it cannot cover navigation.
+background. Desktop panels retain their proportions. The floating utility panel
+has been removed. Controls and Network scenarios use compact links below the menu
+tabs and open illustrated modal dialogs with keyboard focus containment/restoration.
+Last result is available in the same row when a completed result exists; sound is
+configured in Options. These changes have not yet been tested.
 
 Options retains editable numeric fields and explicit validation. Its plus/minus
 controls adjust the session by ten seconds and spawn interval by one second;
 existing fractional spawn values remain supported. Main Menu saves valid values
 before returning. Save settings remains available for explicit save/validation.
 
-Captain's Log presents actual API records in aligned Captain/Date, Points,
-Duration and Result columns, with five records per page. Dates and times come from
+Captain's Log presents actual API records: Rank, Captain, Points and Played for
+ranking; Date, Points, Duration and Result for history, with five records per page. Dates and times come from
 stored results, and durations use mm:ss. Empty, loading, error, retry and pending
-registration behavior remain functional. The utility area retains audio, last
-result, registration recovery, network scenarios and the control guide.
+registration behavior remain implemented. Registration recovery is accessible on
+the result screen, including Last result after refresh. Network scenario selection
+and reset remain available in their dedicated dialog.
 
 The battle uses live Pixi objects: tiled sea, atlas terrain clipped to the current
 island colliders, palms, rocks, fort details, blue player sails, skull Chasers and
 red Shooters. Damaged/wrecked ship sprites replace tint-only feedback. Retained
-enemy bars and projectile geometry keep updates bounded. The HUD and six touch
+player/enemy bars and projectile geometry keep updates bounded. The player's
+overhead bar is green and enemy bars are red, in addition to the HUD health display.
+The HUD and six touch
 controls overlay the canvas, using supplied illustrated frames and icons.
 
 The reference battle image depicts a different coastline and staged ships. The
@@ -29,8 +35,20 @@ configuration; its layout is not a pixel-for-pixel recreation of that image.
 The reference background is used only on menu screens, not as a combat screenshot
 with baked-in ships.
 
+Mobile combat has separate portrait and landscape layouts. Portrait centers the
+complete 960×600 arena in an 8:5 panel, with HUD above and touch controls below.
+Landscape reserves left/right areas for the steering and weapon buttons, with a
+compact HUD above the arena. Pixi uses a uniform contain scale in both layouts;
+water is limited to the actual world bounds, making unused space distinguishable
+from playable water. Safe-area insets protect controls from cutouts and system
+navigation. No gameplay dimensions, collision rules or spawn positions change
+when rotating. These layout adjustments await real-device confirmation and the
+deferred validation phase.
+
 `node scripts/review-ui.mjs` produces desktop/mobile captures under evidence/ui/.
-Reviewed Playwright baselines cover menu, arena, result, options, ranking and
+Previously reviewed Playwright baselines cover menu, arena, result, options, ranking and
 history on both Windows Chromium projects. The history screenshot fixes the date
-to make repeat comparisons deterministic. To reproduce the application, build
+to make repeat comparisons deterministic. They predate the newest layout and
+requirements changes and must be updated during the deferred testing phase.
+To reproduce the application, build
 normally and run preview; do not serve dist-test to end users.

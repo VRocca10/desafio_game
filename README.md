@@ -59,7 +59,10 @@ are limited to the current visit; durable offline recovery requires working stor
 
 ## Network demo and reproducing failures
 
-Expand Network demo in the menu and select a scenario. It affects match APIs only.
+Select Network scenarios below the main menu tabs, then choose a scenario in the
+illustrated dialog. It affects match APIs only. Controls opens
+the keyboard and touch guide; Last result appears after a completed battle and
+provides registration recovery after refresh. Sound is configured in Options.
 Reset demo data clears confirmed/pending matches and the last result, restores the
 success scenario and refreshes query caches. Options, audio preference and player
 identity are retained. Pages uses labeled demo history plus rival fixtures.

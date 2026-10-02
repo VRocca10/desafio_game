@@ -62,7 +62,9 @@ export async function createRenderer(host: HTMLElement, world: Simulation, signa
       const height = Math.max(1, host.clientHeight)
       app.renderer.resize(width, height)
       const scale = Math.min(width / world.config.width, height / world.config.height)
-      water.width = width; water.height = height; water.tileScale.set(Math.max(.5, scale * 1.5))
+      water.width = world.config.width * scale; water.height = world.config.height * scale
+      water.position.set((width - water.width) / 2, (height - water.height) / 2)
+      water.tileScale.set(Math.max(.5, scale * 1.5))
       scene.scale.set(scale)
       scene.position.set((width - world.config.width * scale) / 2, (height - world.config.height * scale) / 2)
     }
@@ -83,9 +85,9 @@ export async function createRenderer(host: HTMLElement, world: Simulation, signa
             actors.addChild(sprite); sprites.set(ship.id, sprite)
             const container = new Container()
             const background = new Sprite(textures[paths.enemyBar]); background.width = 56; background.height = 12; background.position.set(-28, -48)
-            const fill = new Graphics().roundRect(0, 0, 40, 4, 2).fill(0xf32716)
+            const fill = new Graphics().roundRect(0, 0, 40, 4, 2).fill(ship.kind === 'player' ? 0x42c90a : 0xf32716)
             fill.position.set(-20, -44)
-            container.addChild(background, fill); container.visible = ship.kind !== 'player'; bars.addChild(container)
+            container.addChild(background, fill); bars.addChild(container)
             healthBars.set(ship.id, { container, fill })
           }
           sprite.position.set(ship.x, ship.y); sprite.rotation = ship.angle + Math.PI / 2
