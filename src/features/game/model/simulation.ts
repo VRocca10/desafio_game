@@ -16,6 +16,14 @@ export const islands: readonly Circle[] = [
 ]
 const distance = (a: Circle, b: Circle) => Math.hypot(a.x - b.x, a.y - b.y)
 const overlaps = (a: Circle, b: Circle) => distance(a, b) < a.radius + b.radius
+const blockingIsland = (from: Circle, to: Circle) => {
+  const dx = to.x - from.x, dy = to.y - from.y
+  const lengthSquared = dx * dx + dy * dy
+  return islands.find(island => {
+    const t = lengthSquared === 0 ? 0 : Math.max(0, Math.min(1, ((island.x - from.x) * dx + (island.y - from.y) * dy) / lengthSquared))
+    return Math.hypot(from.x + t * dx - island.x, from.y + t * dy - island.y) < island.radius + from.radius
+  })
+}
 
 
 export class Simulation {
@@ -92,12 +100,13 @@ export class Simulation {
       let target = Math.atan2(this.player.y - enemy.y, this.player.x - enemy.x)
       
       const ahead = { ...enemy, x: enemy.x + Math.cos(target) * 65, y: enemy.y + Math.sin(target) * 65 }
-      const obstacle = islands.find((island) => overlaps(ahead, island))
+      const obstacle = blockingIsland(enemy, ahead)
       if (obstacle) target = Math.atan2(enemy.y - obstacle.y, enemy.x - obstacle.x) + Math.PI / 2
       const delta = Math.atan2(Math.sin(target - enemy.angle), Math.cos(target - enemy.angle))
       enemy.angle += Math.max(-this.config.turnSpeed * dt, Math.min(this.config.turnSpeed * dt, delta))
-      if (enemy.kind === 'chaser' || distance(enemy, this.player) > this.config.shooterRange * 0.7) this.move(enemy, this.config.enemySpeed, dt)
-      if (enemy.kind === 'shooter' && distance(enemy, this.player) < this.config.shooterRange && Math.abs(delta) < 0.15) this.fire(enemy, 0, 0)
+      const blocked = enemy.kind === 'shooter' && !!blockingIsland(enemy, this.player)
+      if (enemy.kind === 'chaser' || blocked || distance(enemy, this.player) > this.config.shooterRange * 0.7) this.move(enemy, this.config.enemySpeed, dt)
+      if (enemy.kind === 'shooter' && !blocked && distance(enemy, this.player) < this.config.shooterRange && Math.abs(delta) < 0.15) this.fire(enemy, 0, 0)
       if (enemy.kind === 'chaser' && overlaps(enemy, this.player)) {
         enemy.health = 0; this.player.health -= this.config.impactDamage; this.effect(enemy.x, enemy.y, 75)
         this.onEvent('chaser-impact'); this.onEvent('ship-destroyed')

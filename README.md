@@ -119,6 +119,12 @@ See ARCHITECTURE.md for boundaries and persistence. docs/CHALLENGE.original.md i
 original specification; docs/DELIVERY-AUDIT.md records the initial audit and subsequent
 progress. docs/ASSETS.md records supplied asset provenance. src/features/game/README.md
 lists implementation modules. Profiling evidence is under docs/evidence.
+See docs/evidence/PERFORMANCE.md for the measured rendering optimization, CPU
+timings, before/after results and remaining hardware/memory validation limits.
+Run `npm run profile:memory` to capture lifecycle heap snapshots and retaining paths.
+Raw snapshots stay local in docs/evidence/heap; compact summaries are delivery artifacts.
+The Xiaomi Android acceptance procedure is in docs/REAL-DEVICE-CHECK.md.
+See docs/VISUAL-DESIGN.md for the illustrated interface and reviewed screen captures.
 
 ## Deployment
 

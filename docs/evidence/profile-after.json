@@ -1,0 +1,1015 @@
+{
+  "capturedAt": "2026-10-01T20:25:35.008Z",
+  "environment": {
+    "os": "win32 10.0.26200",
+    "cpu": "AMD Ryzen 3 7320U with Radeon Graphics         ",
+    "logicalCpus": 8,
+    "totalMemoryGiB": 7.239498138427734,
+    "browser": "153.0.8010.12",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "viewport": "1280x720 @1",
+    "headless": true
+  },
+  "configuration": {
+    "duration": 180,
+    "spawnInterval": 4,
+    "seed": "deterministic fixed spawn sequence",
+    "fixture": "stress: stationary player with 100000 initial health to keep all 180 active seconds running",
+    "build": "Vite optimized test build; same rules and renderer, observation/clock hook enabled",
+    "audioMuted": true
+  },
+  "timings": {
+    "wallSeconds": 184.69410000002384,
+    "averageFps": 38.64768825858042,
+    "p95FrameMs": 33.400000000001455,
+    "stageTimings": {
+      "simulationMs": {
+        "meanMs": 0.07445051130019499,
+        "p95Ms": 0.20000004768371582
+      },
+      "renderMs": {
+        "meanMs": 0.31352372830711495,
+        "p95Ms": 0.6000000238418579
+      },
+      "totalMs": {
+        "meanMs": 0.39286014210288306,
+        "p95Ms": 0.7000000476837158
+      }
+    },
+    "windows": [
+      {
+        "startSecond": 0,
+        "averageFps": 39.35163965165215,
+        "meanMs": 25.411901736552494,
+        "p95Ms": 33.400000000001455
+      },
+      {
+        "startSecond": 60,
+        "averageFps": 37.88478558344736,
+        "meanMs": 26.395820501539816,
+        "p95Ms": 33.40000000000873
+      },
+      {
+        "startSecond": 120,
+        "averageFps": 37.034814725922374,
+        "meanMs": 27.0016201620162,
+        "p95Ms": 33.39999999999418
+      }
+    ],
+    "samples": [
+      {
+        "elapsed": 1,
+        "ships": 2,
+        "bullets": 0
+      },
+      {
+        "elapsed": 2,
+        "ships": 2,
+        "bullets": 0
+      },
+      {
+        "elapsed": 3,
+        "ships": 2,
+        "bullets": 0
+      },
+      {
+        "elapsed": 4,
+        "ships": 3,
+        "bullets": 0
+      },
+      {
+        "elapsed": 5,
+        "ships": 3,
+        "bullets": 0
+      },
+      {
+        "elapsed": 6,
+        "ships": 3,
+        "bullets": 0
+      },
+      {
+        "elapsed": 7,
+        "ships": 3,
+        "bullets": 0
+      },
+      {
+        "elapsed": 8,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 9,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 10,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 11,
+        "ships": 3,
+        "bullets": 0
+      },
+      {
+        "elapsed": 12,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 13,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 14,
+        "ships": 4,
+        "bullets": 1
+      },
+      {
+        "elapsed": 15,
+        "ships": 3,
+        "bullets": 1
+      },
+      {
+        "elapsed": 16,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 17,
+        "ships": 4,
+        "bullets": 1
+      },
+      {
+        "elapsed": 18,
+        "ships": 4,
+        "bullets": 0
+      },
+      {
+        "elapsed": 19,
+        "ships": 4,
+        "bullets": 1
+      },
+      {
+        "elapsed": 20,
+        "ships": 5,
+        "bullets": 0
+      },
+      {
+        "elapsed": 21,
+        "ships": 5,
+        "bullets": 0
+      },
+      {
+        "elapsed": 22,
+        "ships": 5,
+        "bullets": 1
+      },
+      {
+        "elapsed": 23,
+        "ships": 5,
+        "bullets": 0
+      },
+      {
+        "elapsed": 24,
+        "ships": 6,
+        "bullets": 1
+      },
+      {
+        "elapsed": 25,
+        "ships": 6,
+        "bullets": 0
+      },
+      {
+        "elapsed": 26,
+        "ships": 6,
+        "bullets": 1
+      },
+      {
+        "elapsed": 27,
+        "ships": 5,
+        "bullets": 1
+      },
+      {
+        "elapsed": 28,
+        "ships": 6,
+        "bullets": 1
+      },
+      {
+        "elapsed": 29,
+        "ships": 6,
+        "bullets": 2
+      },
+      {
+        "elapsed": 30,
+        "ships": 6,
+        "bullets": 0
+      },
+      {
+        "elapsed": 31,
+        "ships": 5,
+        "bullets": 2
+      },
+      {
+        "elapsed": 32,
+        "ships": 6,
+        "bullets": 0
+      },
+      {
+        "elapsed": 33,
+        "ships": 6,
+        "bullets": 2
+      },
+      {
+        "elapsed": 34,
+        "ships": 6,
+        "bullets": 1
+      },
+      {
+        "elapsed": 35,
+        "ships": 6,
+        "bullets": 1
+      },
+      {
+        "elapsed": 36,
+        "ships": 7,
+        "bullets": 1
+      },
+      {
+        "elapsed": 37,
+        "ships": 7,
+        "bullets": 0
+      },
+      {
+        "elapsed": 38,
+        "ships": 7,
+        "bullets": 2
+      },
+      {
+        "elapsed": 39,
+        "ships": 7,
+        "bullets": 0
+      },
+      {
+        "elapsed": 40,
+        "ships": 8,
+        "bullets": 2
+      },
+      {
+        "elapsed": 41,
+        "ships": 8,
+        "bullets": 0
+      },
+      {
+        "elapsed": 43,
+        "ships": 8,
+        "bullets": 1
+      },
+      {
+        "elapsed": 44,
+        "ships": 8,
+        "bullets": 1
+      },
+      {
+        "elapsed": 45,
+        "ships": 8,
+        "bullets": 1
+      },
+      {
+        "elapsed": 46,
+        "ships": 8,
+        "bullets": 3
+      },
+      {
+        "elapsed": 47,
+        "ships": 7,
+        "bullets": 0
+      },
+      {
+        "elapsed": 48,
+        "ships": 8,
+        "bullets": 2
+      },
+      {
+        "elapsed": 49,
+        "ships": 8,
+        "bullets": 1
+      },
+      {
+        "elapsed": 50,
+        "ships": 8,
+        "bullets": 2
+      },
+      {
+        "elapsed": 51,
+        "ships": 8,
+        "bullets": 2
+      },
+      {
+        "elapsed": 52,
+        "ships": 9,
+        "bullets": 1
+      },
+      {
+        "elapsed": 53,
+        "ships": 9,
+        "bullets": 2
+      },
+      {
+        "elapsed": 54,
+        "ships": 9,
+        "bullets": 0
+      },
+      {
+        "elapsed": 55,
+        "ships": 9,
+        "bullets": 2
+      },
+      {
+        "elapsed": 56,
+        "ships": 10,
+        "bullets": 1
+      },
+      {
+        "elapsed": 57,
+        "ships": 10,
+        "bullets": 2
+      },
+      {
+        "elapsed": 58,
+        "ships": 10,
+        "bullets": 1
+      },
+      {
+        "elapsed": 59,
+        "ships": 9,
+        "bullets": 1
+      },
+      {
+        "elapsed": 60,
+        "ships": 10,
+        "bullets": 2
+      },
+      {
+        "elapsed": 61,
+        "ships": 10,
+        "bullets": 1
+      },
+      {
+        "elapsed": 62,
+        "ships": 10,
+        "bullets": 4
+      },
+      {
+        "elapsed": 63,
+        "ships": 9,
+        "bullets": 1
+      },
+      {
+        "elapsed": 64,
+        "ships": 10,
+        "bullets": 2
+      },
+      {
+        "elapsed": 65,
+        "ships": 10,
+        "bullets": 2
+      },
+      {
+        "elapsed": 66,
+        "ships": 10,
+        "bullets": 1
+      },
+      {
+        "elapsed": 67,
+        "ships": 10,
+        "bullets": 2
+      },
+      {
+        "elapsed": 68,
+        "ships": 11,
+        "bullets": 2
+      },
+      {
+        "elapsed": 69,
+        "ships": 11,
+        "bullets": 3
+      },
+      {
+        "elapsed": 70,
+        "ships": 11,
+        "bullets": 1
+      },
+      {
+        "elapsed": 71,
+        "ships": 11,
+        "bullets": 2
+      },
+      {
+        "elapsed": 72,
+        "ships": 12,
+        "bullets": 2
+      },
+      {
+        "elapsed": 73,
+        "ships": 12,
+        "bullets": 1
+      },
+      {
+        "elapsed": 74,
+        "ships": 12,
+        "bullets": 4
+      },
+      {
+        "elapsed": 75,
+        "ships": 11,
+        "bullets": 2
+      },
+      {
+        "elapsed": 76,
+        "ships": 12,
+        "bullets": 2
+      },
+      {
+        "elapsed": 77,
+        "ships": 12,
+        "bullets": 2
+      },
+      {
+        "elapsed": 78,
+        "ships": 12,
+        "bullets": 2
+      },
+      {
+        "elapsed": 79,
+        "ships": 11,
+        "bullets": 3
+      },
+      {
+        "elapsed": 81,
+        "ships": 12,
+        "bullets": 3
+      },
+      {
+        "elapsed": 82,
+        "ships": 12,
+        "bullets": 3
+      },
+      {
+        "elapsed": 83,
+        "ships": 12,
+        "bullets": 2
+      },
+      {
+        "elapsed": 84,
+        "ships": 13,
+        "bullets": 2
+      },
+      {
+        "elapsed": 85,
+        "ships": 13,
+        "bullets": 2
+      },
+      {
+        "elapsed": 86,
+        "ships": 13,
+        "bullets": 3
+      },
+      {
+        "elapsed": 87,
+        "ships": 13,
+        "bullets": 3
+      },
+      {
+        "elapsed": 88,
+        "ships": 14,
+        "bullets": 2
+      },
+      {
+        "elapsed": 89,
+        "ships": 14,
+        "bullets": 2
+      },
+      {
+        "elapsed": 90,
+        "ships": 14,
+        "bullets": 2
+      },
+      {
+        "elapsed": 91,
+        "ships": 13,
+        "bullets": 2
+      },
+      {
+        "elapsed": 92,
+        "ships": 14,
+        "bullets": 2
+      },
+      {
+        "elapsed": 93,
+        "ships": 14,
+        "bullets": 4
+      },
+      {
+        "elapsed": 94,
+        "ships": 14,
+        "bullets": 4
+      },
+      {
+        "elapsed": 95,
+        "ships": 13,
+        "bullets": 3
+      },
+      {
+        "elapsed": 96,
+        "ships": 14,
+        "bullets": 2
+      },
+      {
+        "elapsed": 97,
+        "ships": 14,
+        "bullets": 3
+      },
+      {
+        "elapsed": 98,
+        "ships": 14,
+        "bullets": 3
+      },
+      {
+        "elapsed": 99,
+        "ships": 14,
+        "bullets": 4
+      },
+      {
+        "elapsed": 100,
+        "ships": 15,
+        "bullets": 2
+      },
+      {
+        "elapsed": 101,
+        "ships": 15,
+        "bullets": 2
+      },
+      {
+        "elapsed": 102,
+        "ships": 15,
+        "bullets": 3
+      },
+      {
+        "elapsed": 103,
+        "ships": 15,
+        "bullets": 2
+      },
+      {
+        "elapsed": 104,
+        "ships": 16,
+        "bullets": 5
+      },
+      {
+        "elapsed": 105,
+        "ships": 16,
+        "bullets": 4
+      },
+      {
+        "elapsed": 106,
+        "ships": 16,
+        "bullets": 4
+      },
+      {
+        "elapsed": 107,
+        "ships": 15,
+        "bullets": 3
+      },
+      {
+        "elapsed": 108,
+        "ships": 16,
+        "bullets": 2
+      },
+      {
+        "elapsed": 109,
+        "ships": 16,
+        "bullets": 4
+      },
+      {
+        "elapsed": 110,
+        "ships": 16,
+        "bullets": 3
+      },
+      {
+        "elapsed": 111,
+        "ships": 15,
+        "bullets": 5
+      },
+      {
+        "elapsed": 112,
+        "ships": 16,
+        "bullets": 3
+      },
+      {
+        "elapsed": 113,
+        "ships": 16,
+        "bullets": 3
+      },
+      {
+        "elapsed": 114,
+        "ships": 16,
+        "bullets": 3
+      },
+      {
+        "elapsed": 116,
+        "ships": 17,
+        "bullets": 2
+      },
+      {
+        "elapsed": 117,
+        "ships": 17,
+        "bullets": 6
+      },
+      {
+        "elapsed": 118,
+        "ships": 17,
+        "bullets": 3
+      },
+      {
+        "elapsed": 119,
+        "ships": 17,
+        "bullets": 4
+      },
+      {
+        "elapsed": 120,
+        "ships": 18,
+        "bullets": 2
+      },
+      {
+        "elapsed": 121,
+        "ships": 18,
+        "bullets": 3
+      },
+      {
+        "elapsed": 122,
+        "ships": 18,
+        "bullets": 3
+      },
+      {
+        "elapsed": 123,
+        "ships": 17,
+        "bullets": 4
+      },
+      {
+        "elapsed": 124,
+        "ships": 18,
+        "bullets": 5
+      },
+      {
+        "elapsed": 125,
+        "ships": 18,
+        "bullets": 2
+      },
+      {
+        "elapsed": 126,
+        "ships": 18,
+        "bullets": 5
+      },
+      {
+        "elapsed": 127,
+        "ships": 17,
+        "bullets": 3
+      },
+      {
+        "elapsed": 128,
+        "ships": 18,
+        "bullets": 4
+      },
+      {
+        "elapsed": 129,
+        "ships": 18,
+        "bullets": 5
+      },
+      {
+        "elapsed": 130,
+        "ships": 18,
+        "bullets": 4
+      },
+      {
+        "elapsed": 131,
+        "ships": 18,
+        "bullets": 4
+      },
+      {
+        "elapsed": 132,
+        "ships": 19,
+        "bullets": 2
+      },
+      {
+        "elapsed": 133,
+        "ships": 19,
+        "bullets": 4
+      },
+      {
+        "elapsed": 134,
+        "ships": 19,
+        "bullets": 4
+      },
+      {
+        "elapsed": 135,
+        "ships": 19,
+        "bullets": 6
+      },
+      {
+        "elapsed": 136,
+        "ships": 20,
+        "bullets": 3
+      },
+      {
+        "elapsed": 137,
+        "ships": 20,
+        "bullets": 3
+      },
+      {
+        "elapsed": 138,
+        "ships": 20,
+        "bullets": 4
+      },
+      {
+        "elapsed": 139,
+        "ships": 19,
+        "bullets": 4
+      },
+      {
+        "elapsed": 140,
+        "ships": 20,
+        "bullets": 7
+      },
+      {
+        "elapsed": 141,
+        "ships": 20,
+        "bullets": 3
+      },
+      {
+        "elapsed": 142,
+        "ships": 20,
+        "bullets": 4
+      },
+      {
+        "elapsed": 143,
+        "ships": 19,
+        "bullets": 4
+      },
+      {
+        "elapsed": 144,
+        "ships": 20,
+        "bullets": 4
+      },
+      {
+        "elapsed": 145,
+        "ships": 20,
+        "bullets": 6
+      },
+      {
+        "elapsed": 146,
+        "ships": 20,
+        "bullets": 4
+      },
+      {
+        "elapsed": 147,
+        "ships": 20,
+        "bullets": 4
+      },
+      {
+        "elapsed": 148,
+        "ships": 21,
+        "bullets": 3
+      },
+      {
+        "elapsed": 149,
+        "ships": 21,
+        "bullets": 4
+      },
+      {
+        "elapsed": 150,
+        "ships": 21,
+        "bullets": 5
+      },
+      {
+        "elapsed": 151,
+        "ships": 21,
+        "bullets": 5
+      },
+      {
+        "elapsed": 152,
+        "ships": 22,
+        "bullets": 4
+      },
+      {
+        "elapsed": 153,
+        "ships": 22,
+        "bullets": 3
+      },
+      {
+        "elapsed": 154,
+        "ships": 22,
+        "bullets": 4
+      },
+      {
+        "elapsed": 155,
+        "ships": 21,
+        "bullets": 3
+      },
+      {
+        "elapsed": 157,
+        "ships": 22,
+        "bullets": 6
+      },
+      {
+        "elapsed": 158,
+        "ships": 22,
+        "bullets": 6
+      },
+      {
+        "elapsed": 159,
+        "ships": 21,
+        "bullets": 5
+      },
+      {
+        "elapsed": 160,
+        "ships": 22,
+        "bullets": 4
+      },
+      {
+        "elapsed": 161,
+        "ships": 22,
+        "bullets": 4
+      },
+      {
+        "elapsed": 162,
+        "ships": 22,
+        "bullets": 4
+      },
+      {
+        "elapsed": 163,
+        "ships": 22,
+        "bullets": 6
+      },
+      {
+        "elapsed": 164,
+        "ships": 23,
+        "bullets": 7
+      },
+      {
+        "elapsed": 165,
+        "ships": 23,
+        "bullets": 5
+      },
+      {
+        "elapsed": 166,
+        "ships": 23,
+        "bullets": 4
+      },
+      {
+        "elapsed": 167,
+        "ships": 23,
+        "bullets": 4
+      },
+      {
+        "elapsed": 168,
+        "ships": 24,
+        "bullets": 4
+      },
+      {
+        "elapsed": 169,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 170,
+        "ships": 24,
+        "bullets": 6
+      },
+      {
+        "elapsed": 171,
+        "ships": 23,
+        "bullets": 5
+      },
+      {
+        "elapsed": 172,
+        "ships": 24,
+        "bullets": 4
+      },
+      {
+        "elapsed": 173,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 174,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 175,
+        "ships": 23,
+        "bullets": 6
+      },
+      {
+        "elapsed": 176,
+        "ships": 24,
+        "bullets": 7
+      },
+      {
+        "elapsed": 177,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 178,
+        "ships": 24,
+        "bullets": 4
+      },
+      {
+        "elapsed": 179,
+        "ships": 24,
+        "bullets": 4
+      },
+      {
+        "elapsed": 180,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 180,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 180,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 180,
+        "ships": 24,
+        "bullets": 5
+      },
+      {
+        "elapsed": 180,
+        "ships": 24,
+        "bullets": 5
+      }
+    ],
+    "finalState": "ended"
+  },
+  "memory": [
+    {
+      "cycle": 1,
+      "usedSize": 8085452,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1984176,
+      "backingStorageSize": 1810384,
+      "documents": 3,
+      "nodes": 400,
+      "jsEventListeners": 215
+    },
+    {
+      "cycle": 2,
+      "usedSize": 8316304,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1882432,
+      "backingStorageSize": 1810384,
+      "documents": 3,
+      "nodes": 400,
+      "jsEventListeners": 215
+    },
+    {
+      "cycle": 3,
+      "usedSize": 8488356,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1724456,
+      "backingStorageSize": 1810407,
+      "documents": 2,
+      "nodes": 396,
+      "jsEventListeners": 215
+    },
+    {
+      "cycle": 4,
+      "usedSize": 8609788,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1792040,
+      "backingStorageSize": 1810407,
+      "documents": 2,
+      "nodes": 396,
+      "jsEventListeners": 215
+    },
+    {
+      "cycle": 5,
+      "usedSize": 8653324,
+      "totalSize": 9793536,
+      "embedderHeapUsedSize": 1867040,
+      "backingStorageSize": 1810384,
+      "documents": 3,
+      "nodes": 400,
+      "jsEventListeners": 215
+    }
+  ]
+}

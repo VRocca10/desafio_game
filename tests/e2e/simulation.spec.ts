@@ -1,9 +1,65 @@
 import { expect, test } from '@playwright/test'
 import { Simulation, islands, type Action, type CombatEvent } from '../../src/features/game/model/simulation.ts'
+import { defaultConfig } from '../../src/shared/game/config.ts'
 
 function advance(world: Simulation, seconds: number, actions: Action[] = []) {
   for (let step = 0; step < Math.round(seconds * 60); step++) world.step(1 / 60, new Set(actions))
 }
+
+test('chasers navigate around both islands from either side without getting stuck', () => {
+  for (const island of islands) for (const direction of [-1, 1]) {
+    const world = new Simulation({ ...defaultConfig, duration: 180, spawnPoints: [] })
+    world.player.x = island.x + direction * (island.radius + 100)
+    world.player.y = island.y
+    world.enemies = [{ ...world.player, id: 99, x: island.x - direction * (island.radius + 100), kind: 'chaser', angle: direction > 0 ? 0 : Math.PI, cooldowns: [0, 0, 0] }]
+    for (let tick = 0; tick < 60 * 60 && world.enemies.length; tick++) {
+      world.step(1 / 60, new Set())
+      for (const enemy of world.enemies) for (const obstacle of islands) expect(Math.hypot(enemy.x - obstacle.x, enemy.y - obstacle.y)).toBeGreaterThanOrEqual(enemy.radius + obstacle.radius)
+    }
+    expect(world.enemies).toHaveLength(0)
+    expect(world.player.health).toBe(75)
+    expect(world.score).toBe(0)
+  }
+})
+
+test('shooters behind an island find a clear firing position instead of stopping in its shadow', () => {
+  for (const island of islands) {
+    const world = new Simulation({ ...defaultConfig, duration: 180, playerHealth: 1000, spawnPoints: [] })
+    world.player.x = island.x + island.radius + 30
+    world.player.y = island.y
+    world.enemies = [{ ...world.player, id: 99, x: island.x - island.radius - 30, kind: 'shooter', health: 40, angle: 0, cooldowns: [0, 0, 0] }]
+    advance(world, 30)
+    expect(world.player.health).toBeLessThan(1000)
+  }
+})
+
+test('a complete maximum-density round keeps timed spawns safe and entities bounded', () => {
+  const world = new Simulation({ ...defaultConfig, duration: 180, spawnInterval: 1, playerHealth: 1000000000, spawnSequence: ['shooter'] })
+  const seen = new Set<number>()
+  let maxShips = 0, maxBullets = 0
+  let invalidPositions = 0, unsafeSpawns = 0
+  for (let tick = 0; tick < 180 * 60; tick++) {
+    world.step(1 / 60, new Set())
+    for (const enemy of world.enemies) {
+      if (!seen.has(enemy.id)) {
+        seen.add(enemy.id)
+        // The spawning tick also moves the enemy by up to one fixed step.
+        if (Math.hypot(enemy.x - world.player.x, enemy.y - world.player.y) <= world.config.spawnDistance - world.config.enemySpeed / 60) unsafeSpawns++
+        for (const other of world.enemies) if (other.id !== enemy.id && Math.hypot(enemy.x - other.x, enemy.y - other.y) < enemy.radius + other.radius - 2 * world.config.enemySpeed / 60) unsafeSpawns++
+      }
+      if (!Number.isFinite(enemy.angle) || islands.some(island => Math.hypot(enemy.x - island.x, enemy.y - island.y) < enemy.radius + island.radius)) invalidPositions++
+    }
+    maxShips = Math.max(maxShips, world.enemies.length)
+    maxBullets = Math.max(maxBullets, world.bullets.length)
+  }
+  expect(world.status).toBe('ended')
+  expect(world.elapsed).toBe(180)
+  expect(invalidPositions).toBe(0)
+  expect(unsafeSpawns).toBe(0)
+  expect(maxShips).toBeGreaterThan(100)
+  expect(maxShips).toBeLessThanOrEqual(180)
+  expect(maxBullets).toBeLessThanOrEqual(Math.ceil(world.config.bulletLifetime / world.config.enemyCooldown + 1) * maxShips)
+})
 
 test('lethal damage immediately stops later scoring and enemy actions', () => {
   for (const cause of ['chaser', 'bullet']) {

@@ -6,7 +6,6 @@ export interface MenuActionsProps {
 }
 
 export interface MainMenuProps extends MenuActionsProps {
-  footerContent?: ReactNode
   rankingContent: ReactNode
   historyContent: ReactNode
 }

@@ -11,9 +11,11 @@ import { readJournal } from '@/shared/matches/storage'
 import type { MatchResult } from '@/shared/matches/contracts'
 import { installProbe } from './testing'
 import { GameDialog } from './GameDialog'
+import { Options } from '@/features/options'
 import './game.css'
 
 const controls: [Action, string][] = [['left', 'Turn left'], ['forward', 'Forward'], ['right', 'Turn right'], ['port', 'Fire left'], ['front', 'Fire forward'], ['starboard', 'Fire right']]
+const controlIcons: Record<Action, string> = { left: 'turn_left', forward: 'forward', right: 'turn_right', port: 'fire_left', front: 'fire_front', starboard: 'fire_right' }
 
 export function Game({ onExit, onComplete, registrationContent }: { onExit: () => void; onComplete: (result: MatchResult) => void; registrationContent: ReactNode }) {
   const host = useRef<HTMLDivElement>(null)
@@ -23,11 +25,13 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
   const [muted, setMuted] = useState(readMuted)
   const [audioUnavailable, setAudioUnavailable] = useState(false)
   const [round, setRound] = useState(0)
+  const [pauseOptions, setPauseOptions] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [hud, setHud] = useState<Snapshot>(() => new Simulation().snapshot())
   const resumeButton = useRef<HTMLButtonElement>(null)
   const pauseButton = useRef<HTMLButtonElement>(null)
+  const previousStatus = useRef(hud.status)
 
   useEffect(() => {
     const abort = new AbortController()
@@ -60,13 +64,14 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
       setLoading(false); setHud(world.snapshot())
       audio.update(world.snapshot())
       if (import.meta.env.MODE === 'test') probe = installProbe(world, input, () => {
-        audio.update(world.snapshot()); publishResult(); setHud(world.snapshot()); view.draw()
+        audio.update(world.snapshot()); publishResult(); setHud(world.snapshot()); view.draw(true)
       })
       let previous = performance.now()
       let accumulator = 0
       let publish = 0
       let moving = false
       const tick = (now: number) => {
+        const started = probe ? performance.now() : 0
         const delta = Math.max(0, (now - previous) / 1000)
         previous = now
         if (world.status === 'playing' && !probe?.control.manual) {
@@ -80,9 +85,12 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
             accumulator -= 1 / 60
           }
         } else { accumulator = 0; if (world.status !== 'playing') input!.clear() }
+        const simulated = probe ? performance.now() : 0
         audio.update(world.snapshot(), moving && input!.read().has('forward'))
         publishResult()
+        const rendering = probe ? performance.now() : 0
         view.draw()
+        if (probe) { const ended = performance.now(); probe.record(simulated - started, ended - rendering, ended - started) }
         if (now - publish > 100) { setHud(world.snapshot()); publish = now }
         frame = requestAnimationFrame(tick)
       }
@@ -96,6 +104,8 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
 
   useEffect(() => {
     if (hud.status === 'paused' || hud.status === 'ended') resumeButton.current?.focus()
+    else if (previousStatus.current === 'paused') pauseButton.current?.focus()
+    previousStatus.current = hud.status
   }, [hud.status])
 
   function restart() {
@@ -104,10 +114,14 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
   }
 
   function togglePause() {
+    setPauseOptions(false)
+    const savedMuted = readMuted()
+    audioRef.current?.setMuted(savedMuted)
+    setMuted(savedMuted)
     const world = worldRef.current
     if (!world) return
     inputRef.current?.clear()
-    if (world.status === 'paused') { world.resume(); pauseButton.current?.focus() } else world.pause()
+    if (world.status === 'paused') world.resume(); else world.pause()
     audioRef.current?.update(world.snapshot())
     setHud(world.snapshot())
   }
@@ -115,36 +129,38 @@ export function Game({ onExit, onComplete, registrationContent }: { onExit: () =
   return (
     <main className="game-shell">
       <header className="game-hud" aria-label="Battle status">
-        <div><p className="text-xs uppercase tracking-widest text-primary">Pirate Battle</p><h1 className="text-xl font-bold">Open waters</h1></div>
-        <dl className="flex gap-4 text-sm"><div><dt>Hull</dt><dd>{Math.min(100, Math.round(hud.health / hud.maxHealth * 100))}%</dd></div><div><dt>Score</dt><dd>{hud.score}</dd></div><div><dt>Time</dt><dd>{hud.remaining}s</dd></div></dl>
-        <Button ref={pauseButton} disabled={loading || error || hud.status !== 'playing'} onClick={togglePause}>Pause</Button>
-        <Button variant="outline" aria-label="Mute sound" aria-pressed={muted} onClick={() => {
+        <h1 className="sr-only">Open waters</h1>
+        <dl className="battle-counters"><div className="hud-health"><dt><img src="/assets/png/retina/ui/hud/icon_heart.png" alt="Hull" /></dt><dd><span className="health-track"><span className="health-color" style={{ width: `${Math.min(100, hud.health / hud.maxHealth * 100)}%` }} /></span><img className="health-frame" src="/assets/png/retina/ui/hud/health_frame.png" alt="" /><span className="health-number">{Math.min(hud.maxHealth, hud.health)} / {hud.maxHealth}</span></dd></div><div className="hud-counter"><dt><img src="/assets/png/retina/ui/hud/icon_score.png" alt="Score" /></dt><dd>{hud.score}</dd></div><div className="hud-counter"><dt><img src="/assets/png/retina/ui/hud/icon_time.png" alt="Time" /></dt><dd>{Math.floor(hud.remaining / 60).toString().padStart(2, '0')}:{(hud.remaining % 60).toString().padStart(2, '0')}</dd></div></dl>
+        <Button className="round-control" aria-label="Pause" ref={pauseButton} disabled={loading || error || hud.status !== 'playing'} onClick={togglePause}><img src="/assets/png/retina/ui/controls/icon_pause.png" alt="" /></Button>
+        <Button className="battle-sound" variant="outline" aria-label="Mute sound" aria-pressed={muted} onClick={() => {
           audioRef.current?.setMuted(!muted); setMuted(!muted)
-        }}>{muted ? 'Sound off' : 'Sound on'}</Button>
-        <Button variant="outline" className={hud.status !== 'playing' ? 'invisible' : ''} aria-hidden={hud.status !== 'playing'} disabled={hud.status !== 'playing'} onClick={onExit}>Main Menu</Button>
+        }}><span aria-hidden="true">{muted ? '♫̸' : '♫'}</span><span className="sr-only">{muted ? 'Sound off' : 'Sound on'}</span></Button>
+        <Button variant="outline" aria-label="Main Menu" className={`battle-home round-control ${hud.status !== 'playing' ? 'invisible' : ''}`} aria-hidden={hud.status !== 'playing'} disabled={hud.status !== 'playing'} onClick={onExit}><img src="/assets/png/retina/ui/controls/icon_home.png" alt="" /></Button>
       </header>
       <div className="game-viewport">
         <div className="game-canvas" ref={host} />
         {(loading || error) && <section className="game-overlay"><div role={error ? 'alert' : 'status'}><h2>{error ? 'Unable to load the arena' : 'Preparing your voyage…'}</h2>{error && <Button onClick={restart}>Try again</Button>}</div></section>}
         {!loading && !error && hud.status !== 'playing' && <GameDialog label={hud.status === 'paused' ? 'Battle paused' : 'Battle result'} onEscape={hud.status === 'paused' ? togglePause : undefined}>
-          <div className="space-y-4"><h2 className="text-3xl font-bold">{hud.status === 'paused' ? 'Battle paused' : hud.health === 0 ? 'Your ship has sunk' : 'Voyage complete'}</h2>
-            <p>{hud.status === 'paused' ? 'Resume when you are ready, Captain.' : `Score: ${hud.score} · Time played: ${hud.elapsed}s`}</p>
-            {hud.status === 'ended' && registrationContent}
-            <Button ref={resumeButton} onClick={hud.status === 'paused' ? togglePause : restart}>{hud.status === 'paused' ? 'Resume' : 'Play Again'}</Button>
-            <Button className="ml-3" variant="outline" onClick={onExit}>Main Menu</Button>
-          </div>
+          {hud.status === 'paused' && pauseOptions ? <Options embedded onExit={() => setPauseOptions(false)} /> : <div className="battle-dialog-content"><h2 className="captain-heading">{hud.status === 'paused' ? 'Paused' : 'Battle complete'}</h2>
+            {hud.status === 'paused' ? <p className="battle-dialog-subtitle">Ready when you are.</p> : <><p className="battle-result-score">{hud.score}</p><p className="battle-dialog-subtitle">Points · {Math.floor(hud.elapsed / 60).toString().padStart(2, '0')}:{Math.floor(hud.elapsed % 60).toString().padStart(2, '0')} · {hud.health === 0 ? 'Defeated' : 'Time up'}</p></>}
+            <Button className="menu-action" ref={resumeButton} onClick={hud.status === 'paused' ? togglePause : restart}>{hud.status === 'paused' ? 'Resume' : 'Play Again'}</Button>
+            {hud.status === 'paused' && <Button className="menu-action" onClick={() => setPauseOptions(true)}>Options</Button>}
+            <Button className="menu-action" onClick={onExit}>Main Menu</Button>
+            {hud.status === 'ended' && <div className="battle-registration">{registrationContent}</div>}
+          </div>}
         </GameDialog>}
       </div>
       <footer className="game-controls">
         {audioUnavailable && <p role="status" className="text-xs text-muted-foreground">Some sounds are unavailable. You can keep playing.</p>}
-        <p className="text-xs text-muted-foreground">W / ↑ move · A D / ← → turn · Space fire · Q / E broadsides · Esc pause</p>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-6" aria-label="Touch controls">
-          {controls.map(([action, label]) => <Button key={action} variant="outline" className="touch-none select-none" disabled={loading || error || hud.status !== 'playing'}
+        <p className="battle-key-guide">W / ↑ move · A D / ← → turn · Space fire · Q / E broadsides · Esc pause</p>
+        <div className="battle-touch-controls" aria-label="Touch controls">
+          {controls.map(([action, label]) => <Button key={action} aria-label={label} data-action={action} variant="outline" className="round-control touch-none select-none" disabled={loading || error || hud.status !== 'playing'}
             onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); inputRef.current?.press(event.pointerId, action) }}
             onPointerUp={(event) => inputRef.current?.release(event.pointerId)} onPointerCancel={(event) => inputRef.current?.release(event.pointerId)} onLostPointerCapture={(event) => inputRef.current?.release(event.pointerId)}
-            onContextMenu={(event) => event.preventDefault()}>{label}</Button>)}
+            onContextMenu={(event) => event.preventDefault()}><img src={`/assets/png/retina/ui/controls/icon_${controlIcons[action]}.png`} alt="" /></Button>)}
         </div>
       </footer>
+      <img className="battle-brand" src="/assets/logo_jungle_gaming.svg" alt="Jungle Gaming" />
     </main>
   )
 }

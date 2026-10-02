@@ -100,11 +100,41 @@ Browser tests cover assets, options, combat, audio, data recovery and modal/resu
 Visual baselines use deterministic fixtures. The preview process is started directly
 by Node and terminated by global teardown, avoiding nested npm process cleanup on Windows.
 
-The profile command samples frame intervals and entity counts for 180 real seconds,
-then measures post-GC heap and DOM counters after five lifecycle cycles. Its stress
+The profile command samples frame intervals and entity counts for 180 real seconds
+and records CPU time spent in simulation, render submission and the complete game
+tick. These synchronous timings do not include completion of asynchronous GPU work.
+Set PROFILE_LABEL to preserve separate before/after JSON reports. The test probe
+stores at most 20,000 timing samples, only for the stress scenario; production
+builds remove the probe and timing collection.
+Health bars and projectile geometry are retained for each entity's lifetime;
+frames update transforms instead of clearing and rebuilding Graphics. Membership
+sets are reused, and removed entities release their Graphics. A paused or completed
+arena redraws only on state transition, resize or explicit test-clock publication.
+The requestAnimationFrame loop stays active for input/audio/status synchronization.
+The profile command then measures post-GC heap and DOM counters after five lifecycle cycles. Its stress
 fixture gives the stationary player extra initial health to keep the whole measurement
 active. This is explicitly an instrumented stress test, not a claim about every device
 or ordinary player performance. See the evidence report for environment and limitations.
+
+The memory-snapshot command captures three post-GC menu snapshots and checks for
+retained Simulation instances and accumulating service-worker messages. MSW 3.0.1
+constructs unused default sources when imported; the app terminates those exported
+defaults before setupWorker constructs its active sources. This prevents unresolved
+worker promises retaining each incoming message. Review this workaround on MSW updates.
+Set PROFILE_GPU=1 to request D3D11 hardware rendering on Windows; the profile aborts
+if it observes SwiftShader or another software renderer.
+
+Enemy steering checks the lookahead segment against island circles expanded by the
+ship radius. Shooters continue moving when islands block the path, even within their
+preferred firing range, and fire only from a clear path. This remains local steering.
+
+The illustrated renderer uses a shared sea texture in a TilingSprite, static masked
+island terrain, atlas decorations and per-health sail textures. Atlas Texture views
+belong to each renderer and are destroyed on exit; cached asset sources remain shared.
+The React HUD and touch controls overlay the canvas with semantic labels and supplied
+UI art. Captain's Log uses API data with aligned columns and existing query/paging
+semantics. Menu navigation and Options remain React components rather than flattened
+screenshots. The supplied scene background is reserved for menu screens.
 
 ## References
 

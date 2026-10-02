@@ -10,3 +10,65 @@
 .game-controls button { min-height: 44px; }
 @media (max-width: 600px) { .game-hud { gap: 8px; } .game-hud > div { width: 100%; } }
 @media (max-height: 480px) { .game-shell { padding: 8px; gap: 8px; } .game-controls { gap: 4px; } .game-hud h1 { font-size: 16px; } }
+
+.game-shell { position: relative; padding: 0; gap: 0; overflow: hidden; background: #2bb4cb; }
+.game-viewport { position: absolute; inset: 0; max-width: none; width: 100%; height: 100%; margin: 0; border: 0; border-radius: 0; background: #2bb4cb; }
+.game-hud { position: absolute; top: 20px; left: 20px; right: 20px; width: auto; max-width: none; z-index: 2; gap: 12px; flex-wrap: nowrap; pointer-events: none; }
+.game-hud button { pointer-events: auto; }
+.battle-counters { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
+.hud-health { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+.hud-health dt img { width: 42px; height: 42px; object-fit: contain; }
+.hud-health dd { position: relative; width: clamp(170px, 24vw, 320px); height: 58px; }
+.health-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+.health-track { position: absolute; z-index: 1; left: 12%; right: 10%; top: 28%; bottom: 26%; overflow: hidden; border-radius: 30px; background: #132632; }
+.health-color { display: block; height: 100%; border-radius: 30px 0 0 30px; background: linear-gradient(#b5fa38 0%, #42c90a 22%, #0e8e13 75%, #064d17 100%); box-shadow: inset 0 2px 4px #ffffff80; }
+.health-number { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; font-size: 18px; color: #fff4d6; text-shadow: 0 2px #16300e; }
+.hud-counter { display: flex; align-items: center; gap: 10px; justify-content: center; width: 160px; height: 54px; padding: 10px 20px; background: url('/assets/png/retina/ui/hud/counter_panel.png') center / 100% 100% no-repeat; }
+.hud-counter dt img { width: 28px; height: 28px; object-fit: contain; }
+.hud-counter dd { font-size: 24px; color: #fff0cf; font-family: 'Trebuchet MS', sans-serif; }
+.battle-home.round-control { position: absolute; right: 0; top: 78px; width: 44px; height: 44px; padding: 11px; }
+.battle-sound[data-slot] { position: absolute; left: 10px; top: 66px; border: 0; border-radius: 50%; color: #fff4cf; background: #102d3a99; width: 32px; height: 32px; font-size: 22px; }
+.game-controls { position: absolute; left: 0; bottom: 20px; max-width: none; width: 100%; z-index: 2; pointer-events: none; padding: 0 24px; }
+.game-controls button { pointer-events: auto; }
+.battle-touch-controls { display: grid; grid-template-columns: 64px 64px 64px 1fr 64px 64px 64px; grid-template-rows: 64px 64px; gap: 8px; align-items: center; }
+.battle-touch-controls [data-action=left] { grid-column: 1; grid-row: 2; }
+.battle-touch-controls [data-action=forward] { grid-column: 2; grid-row: 1; }
+.battle-touch-controls [data-action=right] { grid-column: 3; grid-row: 2; }
+.battle-touch-controls [data-action=port] { grid-column: 5; grid-row: 2; }
+.battle-touch-controls [data-action=front] { grid-column: 6; grid-row: 1; }
+.battle-touch-controls [data-action=starboard] { grid-column: 7; grid-row: 2; }
+.battle-key-guide { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); color: #e5f7f3; background: #102d3a9c; border-radius: 8px; padding: 3px 10px; font-size: 10px; white-space: nowrap; }
+.game-controls > [role=status] { position: absolute; bottom: 150px; left: 24px; color: #fff4cf; background: #102d3a; padding: 8px; }
+.battle-brand { position: absolute; bottom: 165px; right: 30px; width: 100px; pointer-events: none; z-index: 1; }
+.battle-dialog { padding: 50px 36px; width: min(780px, 92vw); min-height: min(660px, 90dvh); background-color: transparent; }
+.battle-dialog-content { min-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+.battle-dialog-content .captain-heading { margin: 0 0 8px; }
+.battle-dialog-subtitle { color: #dfcfaa; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.battle-result-score { color: #ffdc89; font-size: 80px; line-height: 1; font-weight: 900; font-variant-numeric: tabular-nums; }
+.battle-result-score + .battle-dialog-subtitle { text-transform: uppercase; margin-bottom: 6px; }
+.battle-registration { max-width: 100%; font-size: 12px; color: #bdced3; }
+.pause-options { min-height: 480px; display: flex; flex-direction: column; justify-content: center; }
+.pause-options form { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.battle-dialog h2 { color: #fff0c7; font-family: 'Trebuchet MS', sans-serif; }
+.battle-dialog .space-y-4 { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.battle-dialog .space-y-4 > * { margin: 0; }
+@media (max-width: 700px) {
+  .game-hud { top: 8px; left: 8px; right: 8px; gap: 4px; }
+  .battle-counters { gap: 4px; }
+  .hud-health { gap: 3px; } .hud-health dt img { width: 22px; height: 22px; }
+  .hud-health dd { width: 90px; height: 38px; } .health-number { font-size: 10px; }
+  .hud-counter { width: 64px; height: 38px; padding: 6px 8px; gap: 3px; } .hud-counter dt img { width: 14px; height: 14px; } .hud-counter dd { font-size: 13px; }
+  .game-hud > .round-control { width: 42px; height: 42px; padding: 11px; }
+  .battle-home.round-control { top: 48px; }
+  .battle-sound[data-slot] { top: 44px; }
+  .game-controls { padding: 0 8px; bottom: 16px; }
+  .battle-touch-controls { grid-template-columns: repeat(3, 44px) 1fr repeat(3, 44px); grid-template-rows: repeat(2, 44px); gap: 4px; }
+  .battle-touch-controls .round-control { width: 44px; height: 44px; padding: 11px; }
+  .battle-key-guide { display: none; }
+  .battle-brand { width: 70px; right: 14px; bottom: 122px; }
+  .battle-dialog { padding: 26px 12px; min-height: min(600px, 90dvh); }
+  .battle-dialog-content, .pause-options { min-height: 400px; gap: 16px; }
+  .battle-result-score { font-size: 64px; }
+}
+@media (max-height: 600px) { .battle-dialog { min-height: 0; padding-block: 16px; } .battle-dialog-content, .pause-options { min-height: 0; gap: 12px; } .battle-dialog-content .menu-action { height: 58px; } .battle-result-score { font-size: 52px; } }
+@media (max-height: 480px) { .game-hud { top: 8px; } .game-controls { bottom: 8px; } .battle-touch-controls { grid-template-rows: 48px 48px; grid-template-columns: repeat(3, 48px) 1fr repeat(3, 48px); } .battle-touch-controls .round-control { width: 48px; height: 48px; padding: 12px; } .battle-brand { bottom: 125px; width: 70px; } .battle-key-guide { display: none; } }

@@ -24,11 +24,11 @@ test('starts, pauses, resumes and cleans up repeated visits', async ({ page }) =
 })
 
 test('reports asset failure and retries loading', async ({ page, context }) => {
-  await context.route('**/assets/png/retina/ships/ship_1.png', (route) => route.abort())
+  await context.route('**/assets/png/retina/ships/ship_5.png', (route) => route.abort())
   await page.goto('/')
   await page.getByRole('button', { name: 'Play', exact: true }).click()
   await expect(page.getByRole('alert')).toContainText('Unable to load the arena')
-  await context.unroute('**/assets/png/retina/ships/ship_1.png')
+  await context.unroute('**/assets/png/retina/ships/ship_5.png')
   await page.getByRole('button', { name: 'Try again' }).click()
   await expect(page.locator('canvas')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Pause', exact: true })).toBeEnabled()
@@ -37,7 +37,7 @@ test('reports asset failure and retries loading', async ({ page, context }) => {
 test('leaving during image loading never attaches an abandoned canvas', async ({ page, context }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
-  await context.route('**/assets/png/retina/ships/ship_1.png', async (route) => {
+  await context.route('**/assets/png/retina/ships/ship_5.png', async (route) => {
     await new Promise((resolve) => setTimeout(resolve, 700))
     await route.continue()
   })

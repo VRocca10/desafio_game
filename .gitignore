@@ -12,6 +12,7 @@ playwright-report/
 test-results/
 dist
 dist-test
+docs/evidence/heap/
 dist-ssr
 *.local
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/shared/components/ui/button'
 import { readMuted, saveMuted } from '@/shared/audio/preferences'
 
-export function MenuAudio() {
+export function MenuAudio({ hiddenControls = false }: { hiddenControls?: boolean }) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [muted, setMuted] = useState(readMuted)
   const [unavailable, setUnavailable] = useState(false)
@@ -40,7 +40,7 @@ export function MenuAudio() {
   }, [muted])
 
   return (
-    <div className="mt-4 text-center">
+    <div className="mt-4 text-center" hidden={hiddenControls}>
       <audio ref={audioRef} src="/assets/sounds/ocean_ambience_loop.wav" loop preload="auto" onError={() => setUnavailable(true)} />
       <Button variant="ghost" aria-label="Mute sound" aria-pressed={muted} onClick={() => {
         saveMuted(!muted); setMuted(!muted)

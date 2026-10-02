@@ -1,0 +1,72 @@
+{
+  "capturedAt": "2026-10-02T14:24:05.310Z",
+  "scope": "Configured opaque text color pairs and button focus rings. Does not inspect every rendered element, gradients, photographs, hover or disabled states.",
+  "checks": [
+    {
+      "foreground": "foreground",
+      "background": "background",
+      "ratio": 12.624118146595753,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "card-foreground",
+      "background": "card",
+      "ratio": 10.608814258941411,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "primary-foreground",
+      "background": "primary",
+      "ratio": 9.103946957120064,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "secondary-foreground",
+      "background": "secondary",
+      "ratio": 8.27249340340814,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "background",
+      "ratio": 8.944348170281817,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "muted",
+      "ratio": 5.861166726833497,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "accent-foreground",
+      "background": "accent",
+      "ratio": 6.425574312619841,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "destructive",
+      "background": "background",
+      "ratio": 7.040512749830868,
+      "minimum": 4.5
+    },
+    {
+      "foreground": "ring at 75% opacity",
+      "background": "background",
+      "ratio": 5.743703640149321,
+      "minimum": 3
+    },
+    {
+      "foreground": "ring at 75% opacity",
+      "background": "card",
+      "ratio": 4.990341864706978,
+      "minimum": 3
+    },
+    {
+      "foreground": "ring at 75% opacity",
+      "background": "secondary",
+      "ratio": 4.078741557180509,
+      "minimum": 3
+    }
+  ]
+}

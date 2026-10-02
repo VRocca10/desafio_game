@@ -1,0 +1,1497 @@
+[
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "64",
+        "type": "internal"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": 2,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
+        "edge": 35,
+        "type": "element"
+      },
+      {
+        "node": "ServiceWorkerContainer",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 7,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "V8EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "system / Context / scope @56505",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Gt",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "getWorker",
+        "edge": "#e",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @55923",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "e",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "Promise",
+        "edge": "workerPromise",
+        "type": "property"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "parameters_and_registers",
+        "type": "internal"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "0",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "parameters_and_registers",
+        "type": "internal"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "0",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "20",
+        "type": "internal"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 2,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
+        "edge": 35,
+        "type": "element"
+      },
+      {
+        "node": "ServiceWorkerContainer",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 7,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "V8EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "system / Context / scope @56505",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Gt",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "getWorker",
+        "edge": "#e",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @55923",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "e",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "Promise",
+        "edge": "workerPromise",
+        "type": "property"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "parameters_and_registers",
+        "type": "internal"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "0",
+        "type": "internal"
+      },
+      {
+        "node": "Array",
+        "edge": "<symbol >",
+        "type": "property"
+      },
+      {
+        "node": "(object elements)",
+        "edge": "elements",
+        "type": "internal"
+      },
+      {
+        "node": "MessagePort",
+        "edge": "0",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
+        "edge": 35,
+        "type": "element"
+      },
+      {
+        "node": "ServiceWorkerContainer",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 7,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "V8EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "system / Context / scope @56505",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Gt",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "getWorker",
+        "edge": "#e",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @55923",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "e",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "Promise",
+        "edge": "workerPromise",
+        "type": "property"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "parameters_and_registers",
+        "type": "internal"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "0",
+        "type": "internal"
+      },
+      {
+        "node": "Array",
+        "edge": "<symbol >",
+        "type": "property"
+      },
+      {
+        "node": "(object elements)",
+        "edge": "elements",
+        "type": "internal"
+      },
+      {
+        "node": "MessagePort",
+        "edge": "0",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Read-only roots)",
+        "edge": 14,
+        "type": "element"
+      },
+      {
+        "node": "Generator",
+        "edge": "Generator_string",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::Supplement<blink::ExecutionContext>, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
+        "edge": 35,
+        "type": "element"
+      },
+      {
+        "node": "ServiceWorkerContainer",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::EventTargetData",
+        "edge": 7,
+        "type": "element"
+      },
+      {
+        "node": "blink::BasicHeapVector<blink::internal::HeapCollectionType::kGCed, cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, 1>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::RegisteredEventListener, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::RegisteredEventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "V8EventListener",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "system / Context / scope @56505",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Gt",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "getWorker",
+        "edge": "#e",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @55923",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "e",
+        "edge": "this",
+        "type": "context"
+      },
+      {
+        "node": "Promise",
+        "edge": "workerPromise",
+        "type": "property"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "Promise",
+        "edge": 4,
+        "type": "hidden"
+      },
+      {
+        "node": "system / PromiseReaction",
+        "edge": "reactions_or_result",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": 1,
+        "type": "hidden"
+      },
+      {
+        "node": "system / Context / scope @459",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "extension",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "AudioContext",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "188",
+        "type": "internal"
+      },
+      {
+        "node": "AudioContext",
+        "edge": 2,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "AudioContext",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "188",
+        "type": "internal"
+      },
+      {
+        "node": "AudioContext",
+        "edge": 3,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "AudioContext",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "188",
+        "type": "internal"
+      },
+      {
+        "node": "AudioContext",
+        "edge": "1 / part of key (system / FunctionTemplateInfo @7793) -> value (AudioContext @58485) pair in WeakMap (table @89379)",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "139",
+        "type": "internal"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 2,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "139",
+        "type": "internal"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": "1 / part of key (system / FunctionTemplateInfo @7697) -> value (ResizeObserver @68049) pair in WeakMap (table @89379)",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Eternal handles)",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "system / FunctionTemplateInfo",
+        "edge": "139",
+        "type": "internal"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 3,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Window [JSGlobalObject] / http://127.0.0.1:4175",
+        "edge": "global_object",
+        "type": "internal"
+      },
+      {
+        "node": "(object properties)",
+        "edge": "properties",
+        "type": "internal"
+      },
+      {
+        "node": "system / PropertyCell",
+        "edge": "272",
+        "type": "internal"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 1,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 27,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 29,
+        "type": "element"
+      }
+    ]
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "menu": {
+    "fps": 58.96462122726364,
+    "p95": 16.799999999999727
+  },
+  "battle": {
+    "fps": 21.38780894905202,
+    "p95": 66.69999999999709
+  },
+  "memory": [
+    {
+      "cycle": 1,
+      "usedSize": 7504568,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1716320,
+      "backingStorageSize": 1807974,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 2,
+      "usedSize": 7718800,
+      "totalSize": 8482816,
+      "embedderHeapUsedSize": 1981640,
+      "backingStorageSize": 1807951,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 3,
+      "usedSize": 7913860,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1624320,
+      "backingStorageSize": 1807974,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 4,
+      "usedSize": 8037284,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1703896,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 5,
+      "usedSize": 8071012,
+      "totalSize": 8744960,
+      "embedderHeapUsedSize": 1645080,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 6,
+      "usedSize": 8127004,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1636336,
+      "backingStorageSize": 1807974,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 7,
+      "usedSize": 8223684,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1718280,
+      "backingStorageSize": 1807974,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 8,
+      "usedSize": 8540860,
+      "totalSize": 9793536,
+      "embedderHeapUsedSize": 1657072,
+      "backingStorageSize": 1808002,
+      "documents": 2,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 9,
+      "usedSize": 8555664,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1664936,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 10,
+      "usedSize": 8606508,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1617656,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 11,
+      "usedSize": 8640420,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1747672,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 394,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 12,
+      "usedSize": 8661232,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1865944,
+      "backingStorageSize": 1807951,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 13,
+      "usedSize": 8698472,
+      "totalSize": 10055680,
+      "embedderHeapUsedSize": 1762392,
+      "backingStorageSize": 1807951,
+      "documents": 2,
+      "nodes": 398,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 14,
+      "usedSize": 8748312,
+      "totalSize": 9531392,
+      "embedderHeapUsedSize": 1640952,
+      "backingStorageSize": 1808328,
+      "documents": 1,
+      "nodes": 389,
+      "jsEventListeners": 214
+    },
+    {
+      "cycle": 15,
+      "usedSize": 8812368,
+      "totalSize": 9269248,
+      "embedderHeapUsedSize": 1856328,
+      "backingStorageSize": 1807943,
+      "documents": 3,
+      "nodes": 398,
+      "jsEventListeners": 214
+    }
+  ],
+  "limitations": "Memory diagnostic ran concurrently with E2E browsers; FPS is not comparable with isolated profiles."
+}

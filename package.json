@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "build:test": "tsc -b && vite build --mode test --outDir dist-test",
     "profile": "npm run build:test && node scripts/profile.mjs",
+    "profile:memory": "npm run build:test && node scripts/memory-snapshots.mjs && node scripts/analyze-heap.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false",

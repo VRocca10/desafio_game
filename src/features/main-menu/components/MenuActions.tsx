@@ -4,7 +4,7 @@ import type { MenuActionsProps } from '../types'
 export function MenuActions({ onPlay, onOptions }: MenuActionsProps) {
   const isPreview = !onPlay || !onOptions
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex w-full flex-col items-center gap-3">
       <Button className="menu-action" disabled={!onPlay} onClick={onPlay} aria-describedby={isPreview ? 'menu-preview-note' : undefined}>
         Play
       </Button>

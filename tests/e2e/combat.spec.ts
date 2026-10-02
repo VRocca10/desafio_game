@@ -1,5 +1,24 @@
 import { expect, test } from '@playwright/test'
 
+test('a full three-minute battle renders growing fleets and completes once', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', error => errors.push(error.message))
+  await page.addInitScript("localStorage.setItem('pirate-battle:settings', JSON.stringify({ duration: 180, spawnInterval: 1 })); localStorage.setItem('pirate-battle:muted', 'true')")
+  await page.goto('/?scenario=stress')
+  await page.getByRole('button', { name: 'Play', exact: true }).click()
+  await expect(page.locator('canvas')).toBeVisible()
+  for (let minute = 0; minute < 3; minute++) {
+    await page.evaluate('window.__battle.advance(60)')
+    await expect(page.locator('canvas')).toBeVisible()
+  }
+  await expect(page.getByRole('heading', { name: 'Voyage complete' })).toBeVisible()
+  expect(await page.evaluate('window.__battle.snapshot().elapsed')).toBe(180)
+  const ended = await page.evaluate('window.__battle.snapshot()')
+  await page.evaluate('window.__battle.advance(10)')
+  expect(await page.evaluate('window.__battle.snapshot()')).toEqual(ended)
+  expect(errors).toEqual([])
+})
+
 test('browser weapons obey cooldowns, kill once and clear on restart', async ({ page }) => {
   await page.goto('/?scenario=combat')
   await page.getByRole('button', { name: 'Play', exact: true }).click()

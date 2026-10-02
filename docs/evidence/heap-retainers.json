@@ -1,0 +1,727 @@
+[
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Window [JSGlobalObject] / http://127.0.0.1:4175",
+        "edge": "global_object",
+        "type": "internal"
+      },
+      {
+        "node": "system / JSProxy",
+        "edge": "WebSocket",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": 2,
+        "type": "hidden"
+      },
+      {
+        "node": "construct",
+        "edge": "construct",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @199561",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "system / Context / scope @93085",
+        "edge": "previous",
+        "type": "internal"
+      },
+      {
+        "node": "$e",
+        "edge": "$e",
+        "type": "context"
+      },
+      {
+        "node": "te",
+        "edge": "__proto__",
+        "type": "property"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "prototype",
+        "type": "property"
+      }
+    ]
+  },
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Window [JSGlobalObject] / http://127.0.0.1:4175",
+        "edge": "global_object",
+        "type": "internal"
+      },
+      {
+        "node": "system / JSProxy",
+        "edge": "WebSocket",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": 2,
+        "type": "hidden"
+      },
+      {
+        "node": "construct",
+        "edge": "construct",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @199561",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "system / Context / scope @93085",
+        "edge": "previous",
+        "type": "internal"
+      },
+      {
+        "node": "x",
+        "edge": "x",
+        "type": "context"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": "prototype",
+        "type": "property"
+      }
+    ]
+  },
+  {
+    "name": "MessageEvent",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::ScriptStateImpl",
+        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
+        "type": "internal"
+      },
+      {
+        "node": "blink::V8PerContextData",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeInfo *, blink::KeyValuePair<const blink::WrapperTypeInfo *, v8::TracedReference<v8::Object>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HashTraits<v8::TracedReference<v8::Object>>>, blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessageEvent",
+        "edge": 15,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 1,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::ScriptStateImpl",
+        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
+        "type": "internal"
+      },
+      {
+        "node": "blink::V8PerContextData",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeInfo *, blink::KeyValuePair<const blink::WrapperTypeInfo *, v8::TracedReference<v8::Object>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HashTraits<v8::TracedReference<v8::Object>>>, blink::HashTraits<const blink::WrapperTypeInfo *>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "MessagePort",
+        "edge": 25,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "MessagePort",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "HTMLDocument",
+        "edge": 5,
+        "type": "element"
+      },
+      {
+        "node": "<main id=\"main-content\" class=\"captain-scene-content\">",
+        "edge": 12,
+        "type": "element"
+      },
+      {
+        "node": "Fi",
+        "edge": "__reactFiber$m5gd9pll38f",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": "__proto__",
+        "type": "property"
+      },
+      {
+        "node": "Fi",
+        "edge": "constructor",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @89013",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "",
+        "edge": "We",
+        "type": "context"
+      },
+      {
+        "node": "system / Context / scope @89401",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "MessagePort",
+        "edge": "re",
+        "type": "context"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": "initial_generator_prototype",
+        "type": "internal"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "system / NativeContext / http://127.0.0.1:4175",
+        "edge": "2 / V8PerContextData::context_",
+        "type": "internal"
+      },
+      {
+        "node": "Window [JSGlobalObject] / http://127.0.0.1:4175",
+        "edge": "global_object",
+        "type": "internal"
+      },
+      {
+        "node": "system / JSProxy",
+        "edge": "WebSocket",
+        "type": "property"
+      },
+      {
+        "node": "Object",
+        "edge": 2,
+        "type": "hidden"
+      },
+      {
+        "node": "construct",
+        "edge": "construct",
+        "type": "property"
+      },
+      {
+        "node": "system / Context / scope @199561",
+        "edge": "context",
+        "type": "internal"
+      },
+      {
+        "node": "system / Context / scope @93085",
+        "edge": "previous",
+        "type": "internal"
+      },
+      {
+        "node": "system / SourceTextModule",
+        "edge": "extension",
+        "type": "internal"
+      },
+      {
+        "node": "Generator",
+        "edge": 5,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "Generator",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "blink::ScriptStateImpl",
+        "edge": "blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31",
+        "type": "internal"
+      },
+      {
+        "node": "blink::V8PerContextData",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<const char *, blink::KeyValuePair<const char *, cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<const char *>, blink::HashTraits<cppgc::internal::BasicMember<blink::V8PerContextData::Data, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<const char *>, blink::HeapAllocator>>",
+        "edge": 3,
+        "type": "element"
+      },
+      {
+        "node": "Modulator",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::ModuleRecordResolverImpl",
+        "edge": 4,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, blink::KeyValuePair<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HashTraits<cppgc::internal::BasicMember<const blink::ModuleScript, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<cppgc::internal::BasicMember<blink::BoxedV8Module, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HeapAllocator>>",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::BoxedV8Module",
+        "edge": 13,
+        "type": "element"
+      },
+      {
+        "node": "system / SourceTextModule",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "Generator",
+        "edge": 5,
+        "type": "hidden"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Window / http://127.0.0.1:4175",
+        "edge": "global",
+        "type": "property"
+      },
+      {
+        "node": "HTMLDocument",
+        "edge": 5,
+        "type": "element"
+      },
+      {
+        "node": "blink::TreeOrderedMap",
+        "edge": 64,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<blink::AtomicString, blink::KeyValuePair<blink::AtomicString, cppgc::internal::BasicMember<blink::TreeOrderedMap::MapEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<blink::AtomicString>, blink::HashTraits<cppgc::internal::BasicMember<blink::TreeOrderedMap::MapEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<blink::AtomicString>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::TreeOrderedMap::MapEntry",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-direction=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_r_2d_\" data-slot=\"tabs-trigger\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 has-data-[icon=inline-end]:pr-1 has-data-[icon=inline-start]:pl-1 aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-muted-foreground dark:hover:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm group-data-[variant=line]/tabs-list:data-active:shadow-none [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-active:bg-transparent dark:group-data-[variant=line]/tabs-list:data-active:border-transparent dark:group-data-[variant=line]/tabs-list:data-active:bg-transparent data-active:bg-background data-active:text-foreground dark:data-active:border-input dark:data-active:bg-input/30 dark:data-active:text-foreground after:absolute after:bg-foreground after:opacity-0 after:transition-opacity group-data-horizontal/tabs:after:inset-x-0 group-data-horizontal/tabs:after:bottom-[-5px] group-data-horizontal/tabs:after:h-0.5 group-data-vertical/tabs:after:inset-y-0 group-data-vertical/tabs:after:-right-1 group-data-vertical/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-active:after:opacity-100 menu-secondary\">",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "blink::NodeRareData",
+        "edge": 14,
+        "type": "element"
+      },
+      {
+        "node": "blink::NodeRareData::DataFieldWrapper<blink::BasicHeapHashMap<blink::internal::HeapCollectionType::kDisallowNew, cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "blink::HeapHashTableBacking<blink::HashTable<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, blink::KeyValuePair<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>, cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::KeyValuePairExtractor, blink::HashMapValueTraits<blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObservation, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>, blink::HashTraits<cppgc::internal::BasicMember<blink::ResizeObserver, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>, blink::HeapAllocator>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 1,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "RemotePlayback",
+        "edge": 176,
+        "type": "element"
+      },
+      {
+        "node": "<audio src=\"/assets/sounds/ocean_ambience_loop.wav\" loop=\"\" preload=\"auto\">",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "<div pseudo=\"-webkit-media-controls\" class=\"phase-pre-ready state-no-source\">",
+        "edge": 18,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 6,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "ResizeObserver",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "C++ Persistent roots",
+        "edge": 29,
+        "type": "element"
+      },
+      {
+        "node": "Pending activities",
+        "edge": "blink::ThreadState::ThreadState(v8::Platform *, std::optional<cppgc::StackStartMarker>)@..\\..\\third_party\\blink\\renderer\\platform\\heap\\thread_state.cc:185",
+        "type": "internal"
+      },
+      {
+        "node": "blink::HeapVectorBacking<std::pair<cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::UntracedMemberTag, cppgc::internal::NoWriteBarrierPolicy>, cppgc::internal::BasicMember<const blink::ActiveScriptWrappableBase, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>>",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "RemotePlayback",
+        "edge": 176,
+        "type": "element"
+      },
+      {
+        "node": "<audio src=\"/assets/sounds/ocean_ambience_loop.wav\" loop=\"\" preload=\"auto\">",
+        "edge": 2,
+        "type": "element"
+      },
+      {
+        "node": "<div pseudo=\"-webkit-media-controls\" class=\"phase-pre-ready state-no-source\">",
+        "edge": 18,
+        "type": "element"
+      },
+      {
+        "node": "<input type=\"range\" step=\"any\" pseudo=\"-webkit-media-controls-timeline\" max=\"12\" min=\"0\" aria-label=\"audio time scrubber\" aria-valuetext=\"elapsed time: 0:00\" aria-description=\"total time: 0:12\" disabled=\"\">",
+        "edge": 11,
+        "type": "element"
+      },
+      {
+        "node": "ResizeObserver",
+        "edge": 4,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 125,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 102,
+        "type": "element"
+      }
+    ]
+  },
+  {
+    "name": "PerformanceResourceTiming",
+    "path": [
+      {
+        "node": "(GC roots)",
+        "edge": 1,
+        "type": "element"
+      },
+      {
+        "node": "(Global handles)",
+        "edge": 10,
+        "type": "element"
+      },
+      {
+        "node": "UtilityScript",
+        "edge": "1 / DevTools console",
+        "type": "internal"
+      },
+      {
+        "node": "Object",
+        "edge": "builtins",
+        "type": "property"
+      },
+      {
+        "node": "Performance",
+        "edge": "performance",
+        "type": "property"
+      },
+      {
+        "node": "blink::HeapVectorBacking<cppgc::internal::BasicMember<blink::PerformanceEntry, cppgc::internal::StrongMemberTag, cppgc::internal::DijkstraWriteBarrierPolicy>>",
+        "edge": 8,
+        "type": "element"
+      },
+      {
+        "node": "PerformanceResourceTiming",
+        "edge": 89,
+        "type": "element"
+      }
+    ]
+  }
+]

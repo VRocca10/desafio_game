@@ -3,8 +3,8 @@ import { MainMenu } from '@/features/main-menu'
 import { RankingPanel } from '@/features/ranking'
 import { MatchHistoryPanel, useRegistration, RegistrationStatus } from '@/features/match-history'
 import { Options } from '@/features/options'
-import { NetworkScenarios } from './NetworkScenarios'
 import { Button } from '@/shared/components/ui/button'
+import { MenuScene } from '@/features/main-menu/components/MenuScene'
 
 const Game = lazy(() => import('@/features/game').then((module) => ({ default: module.Game })))
 
@@ -15,11 +15,10 @@ export default function App() {
   if (screen === 'game') return <Suspense fallback={<p role="status">Loading game…</p>}><Game onExit={() => setScreen('menu')} onComplete={registration.complete} registrationContent={status} /></Suspense>
   if (screen === 'options') return <Options onExit={() => setScreen('menu')} />
   const last = registration.journal.last
-  if (screen === 'result' && last) return <main className="grid min-h-dvh place-items-center bg-slate-950 p-6"><section className="space-y-5 rounded-xl border border-primary/30 p-6">
-    <h1 className="text-3xl font-bold">Last result</h1><p>{last.reason === 'sunk' ? 'Your ship has sunk' : 'Voyage complete'}</p>
-    <p>Score: {last.score} · Time played: {last.duration.toFixed(1)}s</p><p className="text-sm text-muted-foreground">{new Date(last.endedAt).toLocaleString('en-US')} · {last.config.duration}s session · {last.config.spawnInterval}s spawns</p>
-    {status}<div className="flex gap-3"><Button onClick={() => setScreen('game')}>Play Again</Button><Button variant="outline" onClick={() => setScreen('menu')}>Main Menu</Button></div>
-  </section></main>
-  return <MainMenu onPlay={() => setScreen('game')} onOptions={() => setScreen('options')} rankingContent={<RankingPanel />} historyContent={<MatchHistoryPanel />}
-    footerContent={<div className="mt-4 space-y-3 text-center">{last && <Button variant="outline" onClick={() => setScreen('result')}>Last result</Button>}{status}<NetworkScenarios onReset={registration.refresh} /></div>} />
+  if (screen === 'result' && last) return <MenuScene><section className="menu-panel result-panel">
+    <h1 className="captain-heading">Battle complete</h1>
+    <p className="result-panel-score">{last.score}</p><p className="result-panel-subtitle">Points · {Math.floor(last.duration / 60).toString().padStart(2, '0')}:{Math.floor(last.duration % 60).toString().padStart(2, '0')} · {last.reason === 'sunk' ? 'Defeated' : 'Time up'}</p>
+    <Button className="menu-action" onClick={() => setScreen('game')}>Play Again</Button><Button className="menu-action" onClick={() => setScreen('menu')}>Main Menu</Button><div className="text-xs text-muted-foreground">{status}</div>
+  </section></MenuScene>
+  return <MainMenu onPlay={() => setScreen('game')} onOptions={() => setScreen('options')} rankingContent={<RankingPanel />} historyContent={<MatchHistoryPanel />} />
 }
